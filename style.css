@@ -250,6 +250,9 @@ hr.sep{
 }
 .brand-text strong{ font-size:1.05rem; letter-spacing:.2px; }
 .brand-text span{ font-size:.85rem; color:var(--muted); }
+.grid .full{
+  grid-column: 1 / -1;
+}
 .policies-grid{
   display:grid;
   grid-template-columns: repeat(3, 1fr);
