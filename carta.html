@@ -5,17 +5,29 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Carta 2025–2026 | Casona Belga</title>
   <meta name="description" content="Carta Restaurante Casona Belga Temporada 2025–2026. Reserva por WhatsApp." />
+  <meta name="theme-color" content="#07070a" />
+
   <link rel="stylesheet" href="style.css" />
-  <link rel="icon" href="assets/logo_casona.png" type="image/svg+xml" />
+
+  <!-- Favicon (tu archivo es PNG, no SVG) -->
+  <link rel="icon" href="assets/logo_casona.png" type="image/png" />
 </head>
 
 <body>
   <header>
     <div class="container nav">
-      <div class="brand">
-        <strong><a href="index.html">Casona Belga</a></strong>
-        <span>Restaurante · Carta Temporada 2025–2026</span>
+
+      <!-- BRAND con logo -->
+      <div class="brand brand-row">
+        <a href="index.html" class="brand-link" aria-label="Casona Belga - Inicio">
+          <img src="assets/logo_casona.png" alt="Logo Casona Belga" class="logo" />
+          <div class="brand-text">
+            <strong>Casona Belga</strong>
+            <span>Restaurante · Carta Temporada 2025–2026</span>
+          </div>
+        </a>
       </div>
+
       <nav class="menu">
         <a href="habitaciones.html">Habitaciones</a>
         <a href="contacto.html">Contacto</a>
@@ -64,7 +76,7 @@
       </div>
 
       <div class="card">
-        <h2>Fondos</h2>
+        <h2>Fondos + acompañamiento</h2>
         <div class="list">
           <div class="item">
             <div class="title">Medallón de Filete o Lomo vetado grillado, 220 grs</div>
@@ -147,7 +159,7 @@
 
     <hr class="sep" />
 
-    <!-- BEBESTIBLES (y al final, postres) -->
+    <!-- BEBESTIBLES -->
     <div class="grid">
       <div class="card">
         <h2>Jugos y bebidas</h2>
@@ -175,11 +187,11 @@
         <h2>Cervezas</h2>
         <div class="list">
           <div class="item">
-            <div class="title">GLOF — Pale Ale, artesanal de Ch. Chico</div>
+            <div class="title">GLOF — Pale Ale, artesanal de Chile Chico</div>
             <div class="price">$ 4.500</div>
           </div>
           <div class="item">
-            <div class="title">CERRO COLORADO — Porter / Amber Ale, artesanal Ch. Chico</div>
+            <div class="title">CERRO COLORADO — Porter / Amber Ale, artesanal Chile Chico</div>
             <div class="price">$ 4.500</div>
           </div>
           <div class="item">
@@ -238,7 +250,7 @@
       </div>
     </div>
 
-    <!-- POSTRES AL FINAL (junto con bebestibles) -->
+    <!-- POSTRES AL FINAL -->
     <div class="section" style="padding-top:0;">
       <div class="card">
         <h2>Postres</h2>
@@ -269,7 +281,7 @@
 
     <section class="footer">
       <hr class="sep" />
-      <div class="small">¿Reservas? Escríbenos por WhatsApp.</div>
+      <div class="small">¿Quieres reservar? Escríbenos por WhatsApp.</div>
     </section>
   </main>
 

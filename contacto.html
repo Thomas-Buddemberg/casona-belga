@@ -5,16 +5,28 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Contacto | Casona Belga</title>
   <meta name="description" content="Contacto, ubicación, horarios y WhatsApp directo." />
+  <meta name="theme-color" content="#07070a" />
+
   <link rel="stylesheet" href="style.css" />
-  <link rel="icon" href="assets/logo_casona.png" type="image/svg+xml" />
+
+  <!-- OJO: tu logo es PNG, así que cámbialo a image/png -->
+  <link rel="icon" href="assets/logo_casona.png" type="image/png" />
 </head>
+
 <body>
   <header>
     <div class="container nav">
-      <div class="brand">
-        <strong><a href="index.html">Casona Belga</a></strong>
-        <span>Contacto</span>
+      <!-- Brand con logo -->
+      <div class="brand brand-row">
+        <a href="index.html" class="brand-link" aria-label="Casona Belga - Inicio">
+          <img src="assets/logo_casona.png" alt="Logo Casona Belga" class="logo" />
+          <div class="brand-text">
+            <strong>Casona Belga</strong>
+            <span>Contacto</span>
+          </div>
+        </a>
       </div>
+
       <nav class="menu">
         <a href="carta.html">Carta</a>
         <a href="habitaciones.html">Habitaciones</a>

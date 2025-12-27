@@ -6,16 +6,22 @@
   <title>Casona Belga | Hotel & Restaurante</title>
   <meta name="description" content="Hotel & Restaurante. Reserva directa por WhatsApp. Carta, habitaciones, ubicación y horarios." />
   <link rel="stylesheet" href="style.css" />
-  <link rel="icon" href="assets/logo_casona.png" type="image/svg+xml" />
-  <meta name="theme-color" content="#0b0c10" />
-  <link rel="canonical" href="casonabelga.com/index.html" />
+
+  <!-- Favicon (PNG) -->
+  <link rel="icon" href="assets/logo_casona.png" type="image/png" />
+
+  <!-- Theme color (barra del navegador móvil) -->
+  <meta name="theme-color" content="#07070a" />
+
+  <!-- Canonical (ajusta si tu dominio final no será www.casonabelga.cl) -->
+  <link rel="canonical" href="https://www.casonabelga.cl/index.html" />
 
   <!-- Open Graph (para WhatsApp/IG) -->
   <meta property="og:title" content="Casona Belga | Hotel & Restaurante" />
   <meta property="og:description" content="Reserva directa por WhatsApp. Carta, habitaciones, ubicación y horarios." />
   <meta property="og:type" content="website" />
-  <meta property="og:url" content="casonabelga.com/" />
-  <meta property="og:image" content="casonabelga.com/assets/og.jpg" />
+  <meta property="og:url" content="https://www.casonabelga.cl/" />
+  <meta property="og:image" content="https://www.casonabelga.cl/assets/og.jpg" />
 
   <!-- JSON-LD (SEO local + horarios) -->
   <script type="application/ld+json">
@@ -23,7 +29,7 @@
     "@context": "https://schema.org",
     "@type": ["Hotel", "Restaurant"],
     "name": "Casona Belga Hotel y Restaurante",
-    "url": "casonabelga.com/",
+    "url": "https://www.casonabelga.cl/",
     "telephone": "+56998244016",
     "address": {
       "@type": "PostalAddress",
@@ -53,15 +59,24 @@
 <body>
   <header>
     <div class="container nav">
-      <div class="brand">
-        <strong>Casona Belga</strong>
-        <span>Hotel & Restaurante · Chile Chico</span>
+      <!-- BRAND CON LOGO -->
+      <div class="brand brand-row">
+        <a href="index.html" class="brand-link" aria-label="Casona Belga - Inicio">
+          <img src="assets/logo_casona.png" alt="Logo Casona Belga" class="logo" />
+          <div class="brand-text">
+            <strong>Casona Belga</strong>
+            <span>Hotel & Restaurante · Chile Chico</span>
+          </div>
+        </a>
       </div>
+
       <nav class="menu" aria-label="Navegación">
         <a href="carta.html">Carta</a>
         <a href="habitaciones.html">Habitaciones</a>
         <a href="contacto.html">Contacto</a>
-        <a class="btn primary" href="https://wa.me/message/TSCZUHZY7LTVJ1" target="_blank" rel="noopener">Reservar por WhatsApp</a>
+        <a class="btn primary" href="https://wa.me/message/TSCZUHZY7LTVJ1" target="_blank" rel="noopener">
+          Reservar por WhatsApp
+        </a>
       </nav>
     </div>
   </header>
