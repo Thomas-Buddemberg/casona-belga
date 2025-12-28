@@ -4,23 +4,22 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Casona Belga | Hotel & Restaurant</title>
-  <meta name="description" content="Hotel & Restaurant. Book direct via WhatsApp. Restaurant, Hotel, Location and Hours." />
-  <link rel="stylesheet" href="style.css" />
+  <meta name="description" content="Hotel & Restaurant. Book direct via WhatsApp. Menu, rooms, location and hours." />
 
-  <!-- Favicon (PNG) -->
-  <link rel="icon" href="assets/logo_casona.png" type="image/png" />
-
-  <!-- Theme color (mobile browser bar) -->
   <meta name="theme-color" content="#07070a" />
+  <link rel="stylesheet" href="/style.css" />
+  <link rel="icon" href="/assets/logo_casona.png" type="image/png" />
 
-  <!-- Canonical (adjust if your final domain will not be www.casonabelga.cl) -->
-  <link rel="canonical" href="https://www.casonabelga.cl/index.html" />
+  <link rel="canonical" href="https://www.casonabelga.cl/en/index.html" />
+  <link rel="alternate" hreflang="en" href="https://www.casonabelga.cl/en/index.html" />
+  <link rel="alternate" hreflang="es" href="https://www.casonabelga.cl/index.html" />
+  <link rel="alternate" hreflang="x-default" href="https://www.casonabelga.cl/index.html" />
 
   <!-- Open Graph (WhatsApp/IG) -->
   <meta property="og:title" content="Casona Belga | Hotel & Restaurant" />
-  <meta property="og:description" content="Book direct via WhatsApp. Restaurant, Hotel, Location and Hours." />
+  <meta property="og:description" content="Book direct via WhatsApp. Menu, rooms, location and hours." />
   <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://www.casonabelga.cl/" />
+  <meta property="og:url" content="https://www.casonabelga.cl/en/" />
   <meta property="og:image" content="https://www.casonabelga.cl/assets/og.jpg" />
 
   <!-- JSON-LD (Local SEO + hours) -->
@@ -28,8 +27,8 @@
   {
     "@context": "https://schema.org",
     "@type": ["Hotel", "Restaurant"],
-    "name": "Casona Belga Hotel y Restaurante",
-    "url": "https://www.casonabelga.cl/",
+    "name": "Casona Belga",
+    "url": "https://www.casonabelga.cl/en/",
     "telephone": "+56998244016",
     "address": {
       "@type": "PostalAddress",
@@ -41,31 +40,21 @@
     "openingHoursSpecification": [
       {
         "@type": "OpeningHoursSpecification",
-        "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],
-        "opens": "12:30",
-        "closes": "22:30"
-      },
-      {
-        "@type": "OpeningHoursSpecification",
-        "dayOfWeek": ["Saturday","Sunday"],
+        "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
         "opens": "12:30",
         "closes": "22:30"
       }
     ]
   }
   </script>
-  <link rel="alternate" hreflang="en" href="https://www.casonabelga.cl/en/rooms.html" />
-  <link rel="alternate" hreflang="es" href="https://www.casonabelga.cl/habitaciones.html" />
-  <link rel="alternate" hreflang="x-default" href="https://www.casonabelga.cl/index.html" />
 </head>
 
 <body>
   <header>
     <div class="container nav">
-      <!-- BRAND WITH LOGO -->
       <div class="brand brand-row">
-        <a href="index.html" class="brand-link" aria-label="Casona Belga - Home">
-          <img src="assets/logo_casona.png" alt="Casona Belga logo" class="logo" />
+        <a href="/en/index.html" class="brand-link" aria-label="Casona Belga - Home">
+          <img src="/assets/logo_casona.png" alt="Casona Belga logo" class="logo" />
           <div class="brand-text">
             <strong>Casona Belga</strong>
             <span>Hotel & Restaurant · Chile Chico</span>
@@ -74,9 +63,13 @@
       </div>
 
       <nav class="menu" aria-label="Navigation">
-        <a href="carta.html">Restaurant</a>
-        <a href="habitaciones.html">Hotel</a>
-        <a href="contacto.html">Contact</a>
+        <a href="/en/menu.html">Restaurant</a>
+        <a href="/en/rooms.html">Rooms</a>
+        <a href="/en/contact.html">Contact</a>
+
+        <!-- Language -->
+        <a class="btn" href="/index.html">ES</a>
+
         <a class="btn primary" href="https://wa.me/message/TSCZUHZY7LTVJ1" target="_blank" rel="noopener">
           Book via WhatsApp
         </a>
@@ -96,7 +89,7 @@
           <div class="cta-row">
             <a class="btn primary" href="https://wa.me/message/TSCZUHZY7LTVJ1" target="_blank" rel="noopener">🟢 Book a table</a>
             <a class="btn" href="https://wa.me/message/TSCZUHZY7LTVJ1" target="_blank" rel="noopener">🛏️ Check availability</a>
-            <a class="btn" href="carta.html">🍽️ View menu</a>
+            <a class="btn" href="/en/menu.html">🍽️ View menu</a>
           </div>
 
           <div class="badges" aria-label="Quick info">
@@ -118,7 +111,7 @@
           </div>
           <div class="cta-row">
             <a class="btn" href="https://www.google.com/maps/place/Casona+Belga+Restaurante/data=!4m2!3m1!1s0x0:0x537620c01beb3f06?sa=X&ved=1t:2428&hl=en-GB&ictx=111" target="_blank" rel="noopener">🗺️ Open in Maps</a>
-            <a class="btn" href="contacto.html">📞 Contact</a>
+            <a class="btn" href="/en/contact.html">📞 Contact</a>
           </div>
         </div>
       </div>
@@ -134,16 +127,17 @@
           </div>
           <div class="cta-row">
             <a class="btn primary" href="https://wa.me/message/TSCZUHZY7LTVJ1" target="_blank" rel="noopener">Book</a>
+            <a class="btn" href="/en/menu.html">View menu</a>
           </div>
         </div>
 
         <div class="card">
           <div class="kv">
             <strong>Accommodation</strong>
-            <span>Rooms, “from” rates, policies, photos, and WhatsApp inquiries.</span>
+            <span>Rooms, “from” rates, policies, and WhatsApp inquiries.</span>
           </div>
           <div class="cta-row">
-            <a class="btn" href="habitaciones.html">View rooms</a>
+            <a class="btn" href="/en/rooms.html">View rooms</a>
             <a class="btn primary" href="https://wa.me/message/TSCZUHZY7LTVJ1" target="_blank" rel="noopener">Inquire</a>
           </div>
         </div>
@@ -151,11 +145,10 @@
         <div class="card">
           <div class="kv">
             <strong>Location & hours</strong>
-            <span>Address, opening hours, and links to Google/Tripadvisor/Instagram/Facebook.</span>
+            <span>Address, opening hours, and links to Google/Instagram/Facebook.</span>
           </div>
           <div class="cta-row">
             <a class="btn" href="https://share.google/lNHMBaKp86ndHVqnI" target="_blank" rel="noopener">Google</a>
-            <a class="btn" href="https://www.tripadvisor.cl/Hotel_Review-g1409465-d23379037-Reviews-Casona_Belga_Hotel_y_Restaurante-Chile_Chico_Aisen_Region.html" target="_blank" rel="noopener">Tripadvisor</a>
             <a class="btn" href="https://www.instagram.com/casonabelga/?hl=en" target="_blank" rel="noopener">Instagram</a>
             <a class="btn" href="https://www.facebook.com/casonabelga.belga/" target="_blank" rel="noopener">Facebook</a>
           </div>
@@ -171,11 +164,10 @@
     </section>
   </main>
 
-  <!-- Mobile bar (fixed CTA) -->
   <div class="mobile-bar" role="navigation" aria-label="Quick actions">
     <div class="inner">
-      <a class="btn primary" href="https://wa.me/message/TSCZUHZY7LTVJ1" target="_blank" rel="noopener">Book a table</a>
-      <a class="btn" href="https://wa.me/message/TSCZUHZY7LTVJ1" target="_blank" rel="noopener">Hotel</a>
+      <a class="btn primary" href="https://wa.me/message/TSCZUHZY7LTVJ1" target="_blank" rel="noopener">Book</a>
+      <a class="btn" href="/en/rooms.html">Rooms</a>
     </div>
   </div>
 
