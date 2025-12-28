@@ -6,10 +6,14 @@
   <title>Rooms | Casona Belga</title>
   <meta name="description" content="Rooms, rates from, policies, and availability inquiries via WhatsApp." />
   <meta name="theme-color" content="#07070a" />
-  <link rel="stylesheet" href="style.css" />
-  <link rel="icon" href="assets/logo_casona.png" type="image/png" />
-  <link rel="alternate" hreflang="english" href="https://www.casonabelga.cl/en/rooms.html" />
-  <link rel="alternate" hreflang="español" href="https://www.casonabelga.cl/habitaciones.html" />
+
+  <!-- IMPORTANT: absolute paths because this file is under /en/ -->
+  <link rel="stylesheet" href="/style.css" />
+  <link rel="icon" href="/assets/logo_casona.png" type="image/png" />
+
+  <!-- hreflang must use language codes -->
+  <link rel="alternate" hreflang="en" href="https://www.casonabelga.cl/en/rooms.html" />
+  <link rel="alternate" hreflang="es" href="https://www.casonabelga.cl/habitaciones.html" />
   <link rel="alternate" hreflang="x-default" href="https://www.casonabelga.cl/index.html" />
 </head>
 
@@ -18,8 +22,8 @@
     <div class="container nav">
       <!-- BRAND with LOGO -->
       <div class="brand brand-row">
-        <a href="index.html" class="brand-link" aria-label="Casona Belga - Home">
-          <img src="assets/logo_casona.png" alt="Casona Belga logo" class="logo" />
+        <a href="/en/index.html" class="brand-link" aria-label="Casona Belga - Home">
+          <img src="/assets/logo_casona.png" alt="Casona Belga logo" class="logo" />
           <div class="brand-text">
             <strong>Casona Belga</strong>
             <span>Hotel · Rooms</span>
@@ -28,15 +32,17 @@
       </div>
 
       <nav class="menu">
-        <a href="carta.html">Restaurant</a>
-        <a href="contacto.html">Contact</a>
+        <a href="/en/menu.html">Restaurant</a>
+        <a href="/en/contact.html">Contact</a>
 
-        <a class="btn" href="habitaciones.html">ESPAÑOL</a>
+        <!-- Language switch -->
+        <a class="btn" href="/habitaciones.html">ES</a>
 
         <a class="btn primary" href="https://wa.me/message/TSCZUHZY7LTVJ1" target="_blank" rel="noopener">Inquire</a>
       </nav>
     </div>
   </header>
+
 
   <main class="container section">
     <h2>Rooms</h2>
