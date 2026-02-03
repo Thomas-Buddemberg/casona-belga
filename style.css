@@ -474,6 +474,11 @@ header.scrolled {
   z-index: 1;
 }
 
+.menu .btn {
+  padding: 36px 60px;
+  font-size: 1.125rem;
+}
+
 .btn::before {
   content: '';
   position: absolute;
@@ -539,14 +544,14 @@ header.scrolled {
 
 @media (max-width: 768px) {
   .btn {
-    padding: var(--space-xs) var(--space-sm);
-    font-size: 0.6rem;
+    padding: 12px 21px;
+    font-size: 0.9rem;
     letter-spacing: 0.02em;
   }
 
   .menu .btn {
-    padding: 6px 10px;
-    font-size: 0.55rem;
+    padding: 9px 15px;
+    font-size: 0.825rem;
   }
 }
 
