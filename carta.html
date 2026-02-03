@@ -181,7 +181,7 @@
     </div>
 
     <!-- POSTRES AL FINAL -->
-    <div class="section" style="padding-top:0;">
+    <div class="section" style="padding-top:0;" data-animate>
       <div class="card">
         <h2>Postres</h2>
         <div class="list">
@@ -193,12 +193,51 @@
         </div>
       </div>
     </div>
-
-    <section class="footer">
-      <hr class="sep" />
-      <div class="small">¿Quieres reservar? Escríbenos por WhatsApp.</div>
-    </section>
   </main>
+
+  <!-- FOOTER MEJORADO -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-section">
+          <h4>Casona Belga</h4>
+          <p class="small">
+            Hotel & Restaurante boutique en Chile Chico, Región de Aysén. Experiencia patagónica auténtica.
+          </p>
+        </div>
+
+        <div class="footer-section">
+          <h4>Enlaces</h4>
+          <ul>
+            <li><a href="carta.html">Restaurante</a></li>
+            <li><a href="habitaciones.html">Hotel</a></li>
+            <li><a href="contacto.html">Contacto</a></li>
+            <li><a href="index.html">Inicio</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-section">
+          <h4>Contacto</h4>
+          <ul>
+            <li><a href="tel:+56998244016">+56 9 9824 4016</a></li>
+            <li><a href="mailto:casonabelga@gmail.com">casonabelga@gmail.com</a></li>
+            <li><a href="https://wa.me/message/TSCZUHZY7LTVJ1" target="_blank" rel="noopener">WhatsApp</a></li>
+            <li><a href="https://www.instagram.com/casonabelga" target="_blank" rel="noopener">Instagram</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div class="small">
+          © <span id="y"></span> Casona Belga · Descansa bien, come mejor.
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById("y").textContent = new Date().getFullYear();
+  </script>
 
   <div class="mobile-bar">
     <div class="inner">
