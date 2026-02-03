@@ -405,6 +405,7 @@ header.scrolled {
   height: 1px;
   background: var(--copper-warm);
   transition: transform var(--duration-fast) var(--ease-out);
+  pointer-events: none;
 }
 
 .menu > a:not(.btn):hover {
@@ -470,6 +471,7 @@ header.scrolled {
   position: relative;
   overflow: hidden;
   font-family: var(--font-sans);
+  z-index: 1;
 }
 
 .btn::before {
@@ -479,6 +481,7 @@ header.scrolled {
   background: radial-gradient(circle at center, rgba(250, 248, 245, 0.08), transparent 70%);
   opacity: 0;
   transition: opacity var(--duration-base) var(--ease-out);
+  pointer-events: none;
 }
 
 .btn:hover::before {
@@ -536,8 +539,14 @@ header.scrolled {
 
 @media (max-width: 768px) {
   .btn {
-    padding: var(--space-sm) var(--space-md);
-    font-size: 0.65rem;
+    padding: var(--space-xs) var(--space-sm);
+    font-size: 0.6rem;
+    letter-spacing: 0.02em;
+  }
+
+  .menu .btn {
+    padding: 6px 10px;
+    font-size: 0.55rem;
   }
 }
 
@@ -568,6 +577,7 @@ header.scrolled {
   transition: all var(--duration-base) var(--ease-out);
   position: relative;
   overflow: hidden;
+  z-index: 1;
 }
 
 .card::before {
@@ -584,6 +594,7 @@ header.scrolled {
   );
   opacity: 0;
   transition: opacity var(--duration-base) var(--ease-out);
+  pointer-events: none;
 }
 
 .card::after {
@@ -596,6 +607,7 @@ header.scrolled {
   background: radial-gradient(circle, rgba(205, 169, 120, 0.03) 0%, transparent 70%);
   opacity: 0;
   transition: opacity var(--duration-slow) var(--ease-out);
+  pointer-events: none;
 }
 
 .card:hover {
@@ -874,6 +886,7 @@ hr.sep-lg {
   flex: 1;
   height: 1px;
   background: linear-gradient(90deg, transparent, var(--border-subtle), transparent);
+  pointer-events: none;
 }
 
 .sep-decorative span {
@@ -1072,6 +1085,7 @@ hr.sep-lg {
   font-size: var(--text-xl);
   color: var(--copper-warm);
   transition: transform var(--duration-base) var(--ease-out);
+  pointer-events: none;
 }
 
 .faq-item.active .faq-question::after {
