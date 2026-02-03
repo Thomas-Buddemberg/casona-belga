@@ -1147,16 +1147,25 @@ img {
 
 @media (max-width: 768px) {
   .card-image {
-    height: 280px;
+    height: 180px;
     border-radius: var(--radius-sm);
-    margin-bottom: var(--space-md);
+    margin-bottom: var(--space-sm);
   }
   .hero-image {
-    max-height: 280px;
+    max-height: 220px;
   }
 
   .card-flat {
-    padding: var(--space-md);
+    padding: var(--space-sm) var(--space-md);
+  }
+
+  .card-flat h3 {
+    font-size: var(--text-base);
+    margin-bottom: var(--space-xs);
+  }
+
+  .card-flat p {
+    font-size: var(--text-sm);
   }
 }
 
