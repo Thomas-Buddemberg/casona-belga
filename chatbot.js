@@ -98,7 +98,7 @@ Los precios pueden variar según temporada. Para tarifas actualizadas, consúlta
         keywords: ['habitacion', 'habitaciones', 'hotel', 'dormir', 'hospedar', 'alojamiento', 'pieza', 'room', 'cuarto'],
         response: `🛏️ <strong>Habitaciones</strong>
 
-Tenemos 3 habitaciones boutique:
+Tenemos 3 habitaciones:
 • <strong>Tehuelche</strong>
 • <strong>Yaganes</strong>
 • <strong>Kawésqar</strong>
@@ -116,7 +116,7 @@ Tenemos 3 habitaciones boutique:
 ✨ Colchones premium
 ✨ Sábanas de 1000 hilos
 ✨ Lámparas de sal
-✨ Ambiente boutique rústico
+✨ Ambiente rústico
 
 💰 <strong>Desde $95.000 por noche</strong>`,
         actions: [

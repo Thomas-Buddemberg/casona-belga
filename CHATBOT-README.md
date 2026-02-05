@@ -46,7 +46,7 @@ Guía completa para configurar WhatsApp Business con respuestas automáticas.
 ## 🎨 Características del Chatbot
 
 ### Interfaz
-- ✨ Diseño premium boutique matching your website
+- ✨ Diseño premium matching your website
 - 📱 Totalmente responsive (mobile-first)
 - 🎯 Botón flotante en esquina inferior derecha
 - 💬 Ventana de chat elegante con animaciones

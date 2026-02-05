@@ -98,7 +98,7 @@ Prices may vary by season. For updated rates, contact us via WhatsApp.`,
         keywords: ['room', 'rooms', 'habitacion', 'hotel', 'sleep', 'accommodation', 'stay', 'lodge'],
         response: `🛏️ <strong>Rooms</strong>
 
-We have 3 boutique rooms:
+We have 3 rooms:
 • <strong>Tehuelche</strong>
 • <strong>Yaganes</strong>
 • <strong>Kawésqar</strong>
@@ -116,7 +116,7 @@ We have 3 boutique rooms:
 ✨ Premium mattresses
 ✨ 1,000 thread count sheets
 ✨ Salt lamps
-✨ Rustic boutique atmosphere
+✨ Rustic atmosphere
 
 💰 <strong>From $95,000 per night</strong>`,
         actions: [

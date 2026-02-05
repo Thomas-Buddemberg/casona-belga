@@ -21,7 +21,7 @@ Ve a **Configuración > Herramientas para empresas > Perfil de la empresa**:
 
 - **Nombre:** Casona Belga
 - **Categoría:** Restaurante / Hotel
-- **Descripción:** Hotel boutique y restaurante en Chile Chico. Cocina consciente con ingredientes locales. 3 habitaciones premium. Ubicación: B. O'Higgins 895.
+- **Descripción:** Hotel y restaurante en Chile Chico. Cocina consciente con ingredientes locales. 3 habitaciones premium. Ubicación: B. O'Higgins 895.
 - **Dirección:** Bernardo O'Higgins 895, Chile Chico, Aysén
 - **Horario:**
   - Restaurante: Lun-Dom 12:30-22:30
@@ -41,7 +41,7 @@ Ve a **Configuración > Herramientas para empresas > Mensaje de bienvenida**
 ```
 ¡Hola! 👋 Bienvenido a Casona Belga.
 
-Somos un hotel boutique y restaurante en Chile Chico, Patagonia.
+Somos un hotel y restaurante en Chile Chico, Patagonia.
 
 ¿En qué podemos ayudarte?
 
@@ -126,7 +126,7 @@ VINOS
 ```
 🛏️ HABITACIONES CASONA BELGA
 
-Tenemos 3 habitaciones boutique:
+Tenemos 3 habitaciones:
 • Tehuelche
 • Yaganes
 • Kawésqar
@@ -144,8 +144,7 @@ DESTACADOS:
 ✨ Colchones premium
 ✨ Sábanas de 1000 hilos
 ✨ Lámparas de sal
-✨ Ambiente boutique
-
+✨ Ambiente 
 💰 Desde $95.000 por noche
 
 🛏️ Ver fotos: www.casonabelga.cl/habitaciones.html
