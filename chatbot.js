@@ -26,13 +26,13 @@ Tenemos varias opciones para dietas veganas/vegetarianas:
 
 <strong>ENTRADAS:</strong>
 • Tártaro de Betarraga con quinoa crocante - $14.500
-• Crema de Zapallo con zanahoria y jengibre - $9.000
-• Crema de Lentejas - $9.000
+• Crema de Zapallo con zanahoria y jengibre - $8.000
+• Crema de Lentejas - $8.000
 
 <strong>PLATOS PRINCIPALES:</strong>
 • Cremoso de mote con hongos y morchellas - $19.000
   (Trigo de mote con zapallo asado y vegetales grillados)
-• Sorrentino de espinaca en salsa pomodoro con morchellas - $17.000
+• Sorrentino de hojas verdes en salsa pomodoro con hongos y morchellas - $17.000
 • Fetuccinis en salsa pomodoro y pesto de albahaca - $14.000
 
 <strong>ACOMPAÑAMIENTOS:</strong>
@@ -47,22 +47,22 @@ Tenemos varias opciones para dietas veganas/vegetarianas:
       },
       menu: {
         keywords: ['menu', 'menú', 'carta', 'platos', 'comida', 'comer', 'almuerzo', 'cena', 'comidas'],
-        response: `🍽️ <strong>Nuestra Carta</strong>
+        response: `🍽️ <strong>Nuestra Carta 2026</strong>
 
 <strong>ENTRADAS:</strong>
 • Ceviche de Salmón - $15.500
 • Tártaro de Filete en tostadas - $15.500
 • Tártaro de Betarraga - $14.500
-• Cremas (Zapallo/Lentejas) - $9.000
+• Cremas (Zapallo/Lentejas) - $8.000
 
-<strong>FONDOS + SALSA:</strong>
-• Medallón de Filete 220g - $22.500
-• Salmón a la plancha 230g - $23.500
-• Merluza Austral 230g - $21.500
+<strong>FONDOS + ACOMPAÑAMIENTO + SALSA:</strong>
+• Medallón de Filete 220-230g - $22.500
+• Salmón a la plancha 220-230g - $23.500
+• Merluza Austral 220-230g - $21.500
 
 <strong>PASTAS ARTESANALES:</strong>
 • Ravioles de salmón/cordero - $17.000
-• Sorrentino de espinaca - $17.000
+• Sorrentino de hojas verdes - $17.000
 • Fetuccinis - $14.000
 • Cremoso de mote con hongos - $19.000
 • Risotto de camarones - $19.000
@@ -79,7 +79,7 @@ Brownie, Tiramisú, Crema catalana, Crumble de manzana, Torta de la casa - $7.00
         response: `💰 <strong>Rangos de Precios</strong>
 
 <strong>RESTAURANTE:</strong>
-• Entradas: $9.000 - $15.500
+• Entradas: $8.000 - $15.500
 • Platos principales: $14.000 - $23.500
 • Postres: $7.000
 • Vinos: Copa $6.500 / Botella desde $28.000

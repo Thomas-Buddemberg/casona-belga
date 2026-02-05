@@ -26,13 +26,13 @@ We have several options for vegan/vegetarian diets:
 
 <strong>STARTERS:</strong>
 • Beet Tartare with crispy quinoa - $14,500
-• Pumpkin Cream with carrot and ginger - $9,000
-• Lentil Cream - $9,000
+• Pumpkin Cream with carrot and ginger - $8,000
+• Lentil Cream - $8,000
 
 <strong>MAIN COURSES:</strong>
 • Creamy mote with mushrooms and morels - $19,000
   (Mote wheat with roasted pumpkin and grilled vegetables)
-• Spinach Sorrentino in pomodoro sauce with morels - $17,000
+• Green leaves Sorrentino in pomodoro sauce with mushrooms and morels - $17,000
 • Fettuccini in pomodoro and basil pesto sauce - $14,000
 
 <strong>SIDES:</strong>
@@ -47,28 +47,28 @@ We have several options for vegan/vegetarian diets:
       },
       menu: {
         keywords: ['menu', 'carta', 'dishes', 'platos', 'food', 'comida', 'eat', 'comer', 'lunch', 'dinner'],
-        response: `🍽️ <strong>Our Menu</strong>
+        response: `🍽️ <strong>Our 2026 Menu</strong>
 
 <strong>STARTERS:</strong>
 • Salmon Ceviche - $15,500
 • Beef Filet Tartare on toasts - $15,500
 • Beet Tartare - $14,500
-• Creams (Pumpkin/Lentil) - $9,000
+• Creams (Pumpkin/Lentil) - $8,000
 
-<strong>MAINS + SAUCE:</strong>
-• Grilled Filet Medallion 220g - $22,500
-• Grilled Salmon 230g - $23,500
-• Austral Hake 230g - $21,500
+<strong>MAINS + SIDES + SAUCE:</strong>
+• Grilled Filet Medallion 220-230g - $22,500
+• Grilled Salmon 220-230g - $23,500
+• Austral Hake 220-230g - $21,500
 
 <strong>ARTISAN PASTA:</strong>
 • Salmon/Lamb Ravioli - $17,000
-• Spinach Sorrentino - $17,000
+• Green leaves Sorrentino - $17,000
 • Fettuccini - $14,000
 • Creamy mote with mushrooms - $19,000
 • Shrimp Risotto - $19,000
 
 <strong>DESSERTS:</strong>
-Brownie, Tiramisu, Crema catalana, Apple crumble, House cake - $7,000`,
+Brownie, Tiramisu, Crème brûlée, Apple crumble, House cake - $7,000`,
         actions: [
           { text: "📋 View full menu", url: "menu.html" },
           { text: "🟢 Book a table", url: "https://wa.me/message/TSCZUHZY7LTVJ1" }
@@ -79,7 +79,7 @@ Brownie, Tiramisu, Crema catalana, Apple crumble, House cake - $7,000`,
         response: `💰 <strong>Price Ranges</strong>
 
 <strong>RESTAURANT:</strong>
-• Starters: $9,000 - $15,500
+• Starters: $8,000 - $15,500
 • Main courses: $14,000 - $23,500
 • Desserts: $7,000
 • Wines: Glass $6,500 / Bottle from $28,000
