@@ -305,6 +305,103 @@
   margin-top: var(--space-md);
 }
 
+/* User Messages */
+.user-message {
+  align-items: flex-end;
+}
+
+.user-message .message-bubble {
+  background: linear-gradient(135deg, rgba(184, 149, 106, 0.3), rgba(205, 169, 120, 0.2));
+  border-color: rgba(205, 169, 120, 0.4);
+  max-width: 75%;
+}
+
+/* Chat Input */
+.chat-input-container {
+  padding: var(--space-md);
+  border-top: 1px solid var(--border-medium);
+  display: flex;
+  gap: var(--space-xs);
+  background: var(--bg-base);
+  flex-shrink: 0;
+}
+
+#chat-input {
+  flex: 1;
+  background: rgba(26, 23, 21, 0.4);
+  border: 1px solid var(--border-medium);
+  border-radius: var(--radius-sm);
+  padding: var(--space-sm) var(--space-md);
+  color: var(--text-primary);
+  font-size: var(--text-sm);
+  font-family: var(--font-sans);
+  transition: all 0.2s ease;
+}
+
+#chat-input:focus {
+  outline: none;
+  border-color: var(--border-strong);
+  background: rgba(26, 23, 21, 0.6);
+}
+
+#chat-input::placeholder {
+  color: var(--text-secondary);
+  opacity: 0.5;
+}
+
+#chat-send-btn {
+  background: linear-gradient(135deg, rgba(184, 149, 106, 0.3), rgba(205, 169, 120, 0.2));
+  border: 1px solid rgba(205, 169, 120, 0.4);
+  border-radius: var(--radius-sm);
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  flex-shrink: 0;
+  color: var(--text-primary);
+}
+
+#chat-send-btn:hover {
+  background: linear-gradient(135deg, rgba(184, 149, 106, 0.4), rgba(205, 169, 120, 0.3));
+  border-color: rgba(205, 169, 120, 0.6);
+  transform: scale(1.05);
+}
+
+#chat-send-btn:active {
+  transform: scale(0.95);
+}
+
+/* Quick Buttons */
+.chat-quick-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-xs);
+  margin-top: var(--space-sm);
+}
+
+.quick-btn {
+  background: rgba(26, 23, 21, 0.4);
+  border: 1px solid var(--border-medium);
+  border-radius: var(--radius-full);
+  padding: 6px 12px;
+  color: var(--text-primary);
+  font-size: 12px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-family: var(--font-sans);
+  white-space: nowrap;
+}
+
+.quick-btn:hover {
+  background: rgba(26, 23, 21, 0.6);
+  border-color: var(--border-strong);
+  transform: translateY(-2px);
+}
+
 /* Responsive */
 @media (max-width: 768px) {
   .chat-button {
