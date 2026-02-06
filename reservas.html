@@ -1,0 +1,278 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Reservas | Casona Belga</title>
+  <meta name="description" content="Reserva tu habitación en Casona Belga - Hotel en Chile Chico, Patagonia Chilena" />
+
+  <meta name="theme-color" content="#07070a" />
+  <link rel="stylesheet" href="style.css?v=3" />
+  <link rel="stylesheet" href="booking-calendar.css?v=1" />
+  <link rel="icon" href="assets/logo_casona.png" type="image/png" />
+
+  <link rel="canonical" href="https://www.casonabelga.cl/reservas.html" />
+  <link rel="alternate" hreflang="es" href="https://www.casonabelga.cl/reservas.html" />
+  <link rel="alternate" hreflang="en" href="https://www.casonabelga.cl/en/bookings.html" />
+  <link rel="alternate" hreflang="x-default" href="https://www.casonabelga.cl/index.html" />
+</head>
+
+<body>
+  <header>
+    <div class="container nav">
+      <div class="brand brand-row">
+        <a href="./index.html" class="brand-link" aria-label="Casona Belga - Inicio">
+          <img src="assets/logo_casona.png" alt="Logo Casona Belga" class="logo" />
+          <div class="brand-text">
+            <strong>Casona Belga</strong>
+            <span>Hotel · Reservas</span>
+          </div>
+        </a>
+      </div>
+
+      <nav class="menu">
+        <a class="btn" href="habitaciones.html">Habitaciones</a>
+        <a class="btn" href="carta.html">Restaurante</a>
+        <a class="btn" href="contacto.html">Contacto</a>
+        <a class="btn" href="en/bookings.html">ENGLISH</a>
+        <a class="btn primary" href="https://wa.me/message/TSCZUHZY7LTVJ1" target="_blank" rel="noopener">WhatsApp</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="booking-wrapper">
+    <!-- Header -->
+    <div class="booking-header">
+      <h1>🛏️ Reserva tu Estadía</h1>
+      <p class="muted">Selecciona tu habitación y fechas para reservar en Casona Belga</p>
+
+      <!-- Progress Steps -->
+      <div class="booking-steps">
+        <div class="step active" data-step="1">
+          <span class="step-number">1</span>
+          <span>Selecciona fechas</span>
+        </div>
+        <div class="step" data-step="2">
+          <span class="step-number">2</span>
+          <span>Datos personales</span>
+        </div>
+        <div class="step" data-step="3">
+          <span class="step-number">3</span>
+          <span>Confirmación</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Room Selector -->
+    <div class="calendar-container">
+      <h2>1. Selecciona tu Habitación</h2>
+      <div class="room-selector" id="room-selector">
+        <!-- Rooms will be rendered here by JavaScript -->
+      </div>
+
+      <!-- Calendar -->
+      <h2 style="margin-top: 30px;">2. Selecciona tus Fechas</h2>
+      <div class="calendar-header">
+        <button class="nav-btn" id="prev-month">← Anterior</button>
+        <div class="calendar-month" id="calendar-month"></div>
+        <button class="nav-btn" id="next-month">Siguiente →</button>
+      </div>
+
+      <div class="calendar-grid" id="calendar-grid">
+        <!-- Calendar will be rendered here by JavaScript -->
+      </div>
+
+      <div class="calendar-legend">
+        <div class="legend-item">
+          <div class="legend-box available"></div>
+          <span>Disponible</span>
+        </div>
+        <div class="legend-item">
+          <div class="legend-box occupied"></div>
+          <span>Ocupado</span>
+        </div>
+        <div class="legend-item">
+          <div class="legend-box selected"></div>
+          <span>Seleccionado</span>
+        </div>
+      </div>
+
+      <div id="date-selection-summary" style="margin-top: 20px;">
+        <div class="info-message">
+          <strong>Selecciona las fechas de tu estadía</strong><br>
+          Haz clic en el día de llegada y luego en el día de salida
+        </div>
+      </div>
+    </div>
+
+    <!-- Booking Form (initially hidden) -->
+    <div id="booking-form-container" class="booking-form-container" style="display: none;">
+      <h2>3. Completa tus Datos</h2>
+
+      <div id="form-messages"></div>
+
+      <form id="booking-form">
+        <!-- Hidden fields -->
+        <input type="hidden" id="room" name="room" />
+        <input type="hidden" id="checkIn" name="checkIn" />
+        <input type="hidden" id="checkOut" name="checkOut" />
+
+        <!-- Booking Summary -->
+        <div class="booking-summary" id="booking-summary">
+          <!-- Summary will be rendered here by JavaScript -->
+        </div>
+
+        <!-- Guest Details -->
+        <div class="form-row">
+          <div class="form-group">
+            <label for="guestName">Nombre Completo *</label>
+            <input type="text" id="guestName" name="guestName" required
+                   placeholder="Ej: Juan Pérez" />
+          </div>
+
+          <div class="form-group">
+            <label for="guests">Número de Huéspedes *</label>
+            <select id="guests" name="guests" required>
+              <option value="1">1 persona</option>
+              <option value="2" selected>2 personas</option>
+              <option value="3">3 personas</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="guestEmail">Email *</label>
+            <input type="email" id="guestEmail" name="guestEmail" required
+                   placeholder="tu@email.com" />
+          </div>
+
+          <div class="form-group">
+            <label for="guestPhone">Teléfono / WhatsApp *</label>
+            <input type="tel" id="guestPhone" name="guestPhone" required
+                   placeholder="+56 9 1234 5678" />
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="comments">Comentarios o Solicitudes Especiales</label>
+          <textarea id="comments" name="comments"
+                    placeholder="Ej: Necesito cuna para bebé, alergia alimentaria, hora estimada de llegada, etc."></textarea>
+        </div>
+
+        <!-- Form Actions -->
+        <div class="form-actions">
+          <button type="button" class="btn-cancel" id="cancel-booking">
+            Cancelar
+          </button>
+          <button type="submit" class="btn-submit" id="submit-booking">
+            Enviar Solicitud de Reserva
+          </button>
+        </div>
+
+        <p class="small muted" style="margin-top: 20px; text-align: center;">
+          * Al enviar esta solicitud, recibirás un email de confirmación.
+          Nos contactaremos contigo para confirmar la disponibilidad y coordinar el pago.
+        </p>
+      </form>
+    </div>
+
+    <!-- Information Section -->
+    <div class="calendar-container" style="margin-top: 30px;">
+      <h2>📋 Información Importante</h2>
+      <div class="policies-grid">
+        <div class="item">
+          <div class="title">Check-in / Check-out</div>
+          <div class="desc">
+            Check-in desde las <strong>15:00</strong> · Check-out hasta las <strong>11:00</strong>.
+            Late Checkout (14:00) disponible si almuerzas en nuestro restaurante.
+          </div>
+        </div>
+
+        <div class="item">
+          <div class="title">Cancelación</div>
+          <div class="desc">
+            Cancelación sin costo con <strong>7 días</strong> de anticipación.
+            Menos de 7 días: no hay devolución (50% del total).
+          </div>
+        </div>
+
+        <div class="item">
+          <div class="title">Política Climática</div>
+          <div class="desc">
+            Si viajas en ferry y se cierra puerto por clima,
+            <strong>movemos tu reserva sin costo</strong> (sujeto a disponibilidad).
+          </div>
+        </div>
+
+        <div class="item">
+          <div class="title">Desayuno Incluido</div>
+          <div class="desc">
+            Todas las habitaciones incluyen <strong>desayuno</strong>
+            (Lunes a Domingo, 7:30-10:00).
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Contact Section -->
+    <div style="text-align: center; margin: 40px 0;">
+      <h3>¿Preguntas?</h3>
+      <p class="muted">Contáctanos por WhatsApp para ayuda inmediata</p>
+      <a class="btn primary" href="https://wa.me/message/TSCZUHZY7LTVJ1"
+         target="_blank" rel="noopener" style="margin-top: 15px;">
+        💬 WhatsApp: +56 9 9824 4016
+      </a>
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-section">
+          <h4>Casona Belga</h4>
+          <p class="small">
+            Hotel & Restaurante en Chile Chico, Región de Aysén. Experiencia patagónica auténtica.
+          </p>
+        </div>
+
+        <div class="footer-section">
+          <h4>Enlaces</h4>
+          <ul>
+            <li><a href="habitaciones.html">Hotel</a></li>
+            <li><a href="carta.html">Restaurante</a></li>
+            <li><a href="reservas.html">Reservas</a></li>
+            <li><a href="contacto.html">Contacto</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-section">
+          <h4>Contacto</h4>
+          <ul>
+            <li><a href="tel:+56998244016">+56 9 9824 4016</a></li>
+            <li><a href="mailto:casonabelga@gmail.com">casonabelga@gmail.com</a></li>
+            <li><a href="https://wa.me/message/TSCZUHZY7LTVJ1" target="_blank" rel="noopener">WhatsApp</a></li>
+            <li><a href="https://www.instagram.com/casonabelga" target="_blank" rel="noopener">Instagram</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div class="small">
+          © <span id="y"></span> Casona Belga · Descansa bien, come mejor.
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById("y").textContent = new Date().getFullYear();
+
+    // Configure API URL (change this to your production URL when deploying)
+    window.BOOKING_API_URL = 'http://localhost:3000/api';
+  </script>
+
+  <script src="booking-calendar.js" defer></script>
+</body>
+</html>

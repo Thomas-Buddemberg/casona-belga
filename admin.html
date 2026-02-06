@@ -1,0 +1,1018 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Panel Admin - Reservas | Casona Belga</title>
+  <meta name="robots" content="noindex, nofollow" />
+
+  <link rel="icon" href="assets/logo_casona.png" type="image/png" />
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+      background: #f5f7fa;
+      color: #2c3e50;
+      line-height: 1.6;
+    }
+
+    .login-container {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+
+    .login-box {
+      background: white;
+      padding: 40px;
+      border-radius: 12px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+      max-width: 400px;
+      width: 100%;
+    }
+
+    .login-box h1 {
+      margin-bottom: 30px;
+      text-align: center;
+      color: #2c3e50;
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    .form-group label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: 600;
+    }
+
+    .form-group input {
+      width: 100%;
+      padding: 12px;
+      border: 2px solid #dee2e6;
+      border-radius: 8px;
+      font-size: 16px;
+    }
+
+    .form-group input:focus {
+      outline: none;
+      border-color: #3498db;
+    }
+
+    .btn {
+      width: 100%;
+      padding: 12px;
+      background: #3498db;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-size: 16px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    .btn:hover {
+      background: #2980b9;
+    }
+
+    .error {
+      background: #ffebee;
+      color: #c62828;
+      padding: 12px;
+      border-radius: 8px;
+      margin-bottom: 20px;
+      border-left: 4px solid #ef5350;
+    }
+
+    /* Admin Panel Styles */
+    .admin-panel {
+      display: none;
+      min-height: 100vh;
+    }
+
+    .admin-header {
+      background: #2c3e50;
+      color: white;
+      padding: 20px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+
+    .admin-header-content {
+      max-width: 1400px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .admin-header h1 {
+      font-size: 1.5em;
+    }
+
+    .logout-btn {
+      background: #e74c3c;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 6px;
+      color: white;
+      cursor: pointer;
+      font-weight: 600;
+    }
+
+    .logout-btn:hover {
+      background: #c0392b;
+    }
+
+    .admin-content {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 30px 20px;
+    }
+
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      margin-bottom: 30px;
+    }
+
+    .stat-card {
+      background: white;
+      padding: 25px;
+      border-radius: 12px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+
+    .stat-card h3 {
+      color: #7f8c8d;
+      font-size: 14px;
+      font-weight: 600;
+      margin-bottom: 10px;
+      text-transform: uppercase;
+    }
+
+    .stat-card .stat-value {
+      font-size: 2.5em;
+      font-weight: bold;
+      color: #2c3e50;
+    }
+
+    .stat-card.pending .stat-value {
+      color: #f39c12;
+    }
+
+    .stat-card.confirmed .stat-value {
+      color: #27ae60;
+    }
+
+    .filters {
+      background: white;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      margin-bottom: 20px;
+      display: flex;
+      gap: 15px;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+
+    .filter-group {
+      flex: 1;
+      min-width: 200px;
+    }
+
+    .filter-group label {
+      display: block;
+      margin-bottom: 5px;
+      font-weight: 600;
+      font-size: 14px;
+    }
+
+    .filter-group select {
+      width: 100%;
+      padding: 10px;
+      border: 2px solid #dee2e6;
+      border-radius: 6px;
+      font-size: 14px;
+    }
+
+    .bookings-table {
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      overflow: hidden;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    th {
+      background: #34495e;
+      color: white;
+      padding: 15px;
+      text-align: left;
+      font-weight: 600;
+    }
+
+    td {
+      padding: 15px;
+      border-bottom: 1px solid #ecf0f1;
+    }
+
+    tr:hover {
+      background: #f8f9fa;
+    }
+
+    .status-badge {
+      padding: 6px 12px;
+      border-radius: 20px;
+      font-size: 12px;
+      font-weight: 600;
+      display: inline-block;
+    }
+
+    .status-pending {
+      background: #fff3cd;
+      color: #856404;
+    }
+
+    .status-confirmed {
+      background: #d4edda;
+      color: #155724;
+    }
+
+    .status-rejected {
+      background: #f8d7da;
+      color: #721c24;
+    }
+
+    .status-cancelled {
+      background: #e2e3e5;
+      color: #383d41;
+    }
+
+    .action-btns {
+      display: flex;
+      gap: 8px;
+    }
+
+    .action-btn {
+      padding: 8px 12px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 12px;
+      font-weight: 600;
+      transition: all 0.3s ease;
+    }
+
+    .btn-confirm {
+      background: #27ae60;
+      color: white;
+    }
+
+    .btn-confirm:hover {
+      background: #229954;
+    }
+
+    .btn-reject {
+      background: #e74c3c;
+      color: white;
+    }
+
+    .btn-reject:hover {
+      background: #c0392b;
+    }
+
+    .btn-view {
+      background: #3498db;
+      color: white;
+    }
+
+    .btn-view:hover {
+      background: #2980b9;
+    }
+
+    .modal {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.5);
+      z-index: 1000;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+
+    .modal.active {
+      display: flex;
+    }
+
+    .modal-content {
+      background: white;
+      padding: 30px;
+      border-radius: 12px;
+      max-width: 600px;
+      width: 100%;
+      max-height: 90vh;
+      overflow-y: auto;
+    }
+
+    .modal-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+
+    .modal-close {
+      background: none;
+      border: none;
+      font-size: 24px;
+      cursor: pointer;
+      color: #7f8c8d;
+    }
+
+    .detail-row {
+      display: flex;
+      justify-content: space-between;
+      padding: 10px 0;
+      border-bottom: 1px solid #ecf0f1;
+    }
+
+    .detail-label {
+      font-weight: 600;
+      color: #7f8c8d;
+    }
+
+    .empty-state {
+      text-align: center;
+      padding: 60px 20px;
+      color: #7f8c8d;
+    }
+
+    .empty-state svg {
+      width: 100px;
+      height: 100px;
+      margin-bottom: 20px;
+      opacity: 0.3;
+    }
+
+    @media (max-width: 768px) {
+      .stats {
+        grid-template-columns: 1fr;
+      }
+
+      table {
+        font-size: 14px;
+      }
+
+      th, td {
+        padding: 10px 8px;
+      }
+
+      .action-btns {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Login Screen -->
+  <div id="login-container" class="login-container">
+    <div class="login-box">
+      <h1>🔐 Panel Admin</h1>
+      <p style="text-align: center; margin-bottom: 30px; color: #7f8c8d;">
+        Gestión de Reservas - Casona Belga
+      </p>
+
+      <div id="login-error" style="display: none;"></div>
+
+      <form id="login-form">
+        <div class="form-group">
+          <label for="password">Contraseña de Acceso</label>
+          <input type="password" id="password" required autofocus
+                 placeholder="Ingresa la contraseña" />
+        </div>
+
+        <button type="submit" class="btn">Ingresar</button>
+      </form>
+
+      <p style="margin-top: 20px; font-size: 12px; color: #95a5a6; text-align: center;">
+        Acceso restringido solo para administradores
+      </p>
+    </div>
+  </div>
+
+  <!-- Admin Panel -->
+  <div id="admin-panel" class="admin-panel">
+    <header class="admin-header">
+      <div class="admin-header-content">
+        <h1>🛏️ Panel de Reservas - Casona Belga</h1>
+        <button class="logout-btn" onclick="logout()">Cerrar Sesión</button>
+      </div>
+    </header>
+
+    <div class="admin-content">
+      <!-- Statistics -->
+      <div class="stats">
+        <div class="stat-card pending">
+          <h3>Pendientes</h3>
+          <div class="stat-value" id="stat-pending">0</div>
+        </div>
+        <div class="stat-card confirmed">
+          <h3>Confirmadas</h3>
+          <div class="stat-value" id="stat-confirmed">0</div>
+        </div>
+        <div class="stat-card">
+          <h3>Total del Mes</h3>
+          <div class="stat-value" id="stat-month">0</div>
+        </div>
+        <div class="stat-card">
+          <h3>Ingresos Proyectados</h3>
+          <div class="stat-value" id="stat-revenue" style="font-size: 1.5em;">$0</div>
+        </div>
+      </div>
+
+      <!-- Filters -->
+      <div class="filters">
+        <div class="filter-group">
+          <label>Estado</label>
+          <select id="filter-status" onchange="filterBookings()">
+            <option value="">Todos</option>
+            <option value="pending">Pendientes</option>
+            <option value="confirmed">Confirmadas</option>
+            <option value="rejected">Rechazadas</option>
+            <option value="cancelled">Canceladas</option>
+          </select>
+        </div>
+        <div class="filter-group">
+          <label>Habitación</label>
+          <select id="filter-room" onchange="filterBookings()">
+            <option value="">Todas</option>
+            <option value="tehuelche">Tehuelche</option>
+            <option value="yaganes">Yaganes</option>
+            <option value="chonos">Chonos</option>
+          </select>
+        </div>
+        <div class="filter-group">
+          <button class="btn" onclick="loadBookings()" style="margin-top: 20px;">
+            🔄 Actualizar
+          </button>
+        </div>
+        <div class="filter-group">
+          <button class="btn" onclick="openNewBookingModal()" style="margin-top: 20px; background: #27ae60;">
+            ➕ Nueva Reserva
+          </button>
+        </div>
+      </div>
+
+      <!-- Bookings Table -->
+      <div class="bookings-table">
+        <table id="bookings-table">
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Fecha</th>
+              <th>Huésped</th>
+              <th>Habitación</th>
+              <th>Check-in</th>
+              <th>Check-out</th>
+              <th>Total</th>
+              <th>Estado</th>
+              <th>Acciones</th>
+            </tr>
+          </thead>
+          <tbody id="bookings-tbody">
+            <tr>
+              <td colspan="9" class="empty-state">
+                <div>Cargando reservas...</div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <!-- Booking Details Modal -->
+  <div id="booking-modal" class="modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2>Detalles de la Reserva</h2>
+        <button class="modal-close" onclick="closeModal()">&times;</button>
+      </div>
+      <div id="modal-body">
+        <!-- Details will be rendered here -->
+      </div>
+    </div>
+  </div>
+
+  <!-- New Booking Modal -->
+  <div id="new-booking-modal" class="modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2>Nueva Reserva Manual</h2>
+        <button class="modal-close" onclick="closeNewBookingModal()">&times;</button>
+      </div>
+      <div style="margin-bottom: 15px; padding: 10px; background: #e3f2fd; border-radius: 5px; font-size: 14px;">
+        💡 <strong>Tip:</strong> Usa este formulario para agregar reservas de Booking.com u otras plataformas
+      </div>
+      <form id="new-booking-form">
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-bottom: 15px;">
+          <div>
+            <label style="display: block; margin-bottom: 5px; font-weight: 600;">Habitación *</label>
+            <select id="new-room" required style="width: 100%; padding: 10px; border: 2px solid #dee2e6; border-radius: 6px;">
+              <option value="">Selecciona...</option>
+              <option value="tehuelche">Tehuelche</option>
+              <option value="yaganes">Yaganes</option>
+              <option value="chonos">Chonos</option>
+            </select>
+          </div>
+          <div>
+            <label style="display: block; margin-bottom: 5px; font-weight: 600;">Estado *</label>
+            <select id="new-status" required style="width: 100%; padding: 10px; border: 2px solid #dee2e6; border-radius: 6px;">
+              <option value="confirmed">Confirmada</option>
+              <option value="pending">Pendiente</option>
+            </select>
+          </div>
+        </div>
+
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-bottom: 15px;">
+          <div>
+            <label style="display: block; margin-bottom: 5px; font-weight: 600;">Check-in *</label>
+            <input type="date" id="new-checkIn" required style="width: 100%; padding: 10px; border: 2px solid #dee2e6; border-radius: 6px;">
+          </div>
+          <div>
+            <label style="display: block; margin-bottom: 5px; font-weight: 600;">Check-out *</label>
+            <input type="date" id="new-checkOut" required style="width: 100%; padding: 10px; border: 2px solid #dee2e6; border-radius: 6px;">
+          </div>
+        </div>
+
+        <div style="display: grid; grid-template-columns: 2fr 1fr; gap: 15px; margin-bottom: 15px;">
+          <div>
+            <label style="display: block; margin-bottom: 5px; font-weight: 600;">Nombre del Huésped *</label>
+            <input type="text" id="new-guestName" required placeholder="Ej: Juan Pérez" style="width: 100%; padding: 10px; border: 2px solid #dee2e6; border-radius: 6px;">
+          </div>
+          <div>
+            <label style="display: block; margin-bottom: 5px; font-weight: 600;">Huéspedes *</label>
+            <select id="new-guests" required style="width: 100%; padding: 10px; border: 2px solid #dee2e6; border-radius: 6px;">
+              <option value="1">1</option>
+              <option value="2" selected>2</option>
+              <option value="3">3</option>
+            </select>
+          </div>
+        </div>
+
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-bottom: 15px;">
+          <div>
+            <label style="display: block; margin-bottom: 5px; font-weight: 600;">Email *</label>
+            <input type="email" id="new-guestEmail" required placeholder="email@ejemplo.com" style="width: 100%; padding: 10px; border: 2px solid #dee2e6; border-radius: 6px;">
+          </div>
+          <div>
+            <label style="display: block; margin-bottom: 5px; font-weight: 600;">Teléfono *</label>
+            <input type="tel" id="new-guestPhone" required placeholder="+56912345678" style="width: 100%; padding: 10px; border: 2px solid #dee2e6; border-radius: 6px;">
+          </div>
+        </div>
+
+        <div style="margin-bottom: 15px;">
+          <label style="display: block; margin-bottom: 5px; font-weight: 600;">Origen de la Reserva</label>
+          <select id="new-source" style="width: 100%; padding: 10px; border: 2px solid #dee2e6; border-radius: 6px;">
+            <option value="Booking.com">Booking.com</option>
+            <option value="Airbnb">Airbnb</option>
+            <option value="Teléfono">Teléfono</option>
+            <option value="Email">Email</option>
+            <option value="WhatsApp">WhatsApp</option>
+            <option value="Presencial">Presencial</option>
+            <option value="Otro">Otro</option>
+          </select>
+        </div>
+
+        <div style="margin-bottom: 20px;">
+          <label style="display: block; margin-bottom: 5px; font-weight: 600;">Comentarios</label>
+          <textarea id="new-comments" rows="3" placeholder="Notas adicionales..." style="width: 100%; padding: 10px; border: 2px solid #dee2e6; border-radius: 6px;"></textarea>
+        </div>
+
+        <div id="new-booking-error" style="display: none; margin-bottom: 15px;"></div>
+
+        <div style="display: flex; gap: 10px; justify-content: flex-end;">
+          <button type="button" class="btn-cancel" onclick="closeNewBookingModal()">
+            Cancelar
+          </button>
+          <button type="submit" class="btn" style="background: #27ae60; color: white; border: none; padding: 12px 30px; border-radius: 6px; cursor: pointer; font-weight: 600;">
+            Guardar Reserva
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script>
+    // Configuration
+    const API_URL = 'http://localhost:3000/api';
+    const ADMIN_PASSWORD = 'casona2024'; // Change this to a secure password
+
+    let allBookings = [];
+    let currentBooking = null;
+
+    // Login
+    document.getElementById('login-form').addEventListener('submit', (e) => {
+      e.preventDefault();
+      const password = document.getElementById('password').value;
+
+      if (password === ADMIN_PASSWORD) {
+        sessionStorage.setItem('admin-logged-in', 'true');
+        showAdminPanel();
+      } else {
+        showError('Contraseña incorrecta');
+      }
+    });
+
+    function showError(message) {
+      const errorEl = document.getElementById('login-error');
+      errorEl.innerHTML = `<div class="error">${message}</div>`;
+      errorEl.style.display = 'block';
+      setTimeout(() => {
+        errorEl.style.display = 'none';
+      }, 3000);
+    }
+
+    function showAdminPanel() {
+      document.getElementById('login-container').style.display = 'none';
+      document.getElementById('admin-panel').style.display = 'block';
+      loadBookings();
+    }
+
+    function logout() {
+      sessionStorage.removeItem('admin-logged-in');
+      document.getElementById('admin-panel').style.display = 'none';
+      document.getElementById('login-container').style.display = 'flex';
+      document.getElementById('password').value = '';
+    }
+
+    // Check if already logged in
+    if (sessionStorage.getItem('admin-logged-in') === 'true') {
+      showAdminPanel();
+    }
+
+    // Load bookings
+    async function loadBookings() {
+      try {
+        const response = await fetch(`${API_URL}/bookings`);
+        const data = await response.json();
+        allBookings = data.bookings;
+        updateStats();
+        renderBookings(allBookings);
+      } catch (error) {
+        console.error('Error loading bookings:', error);
+        alert('Error al cargar las reservas');
+      }
+    }
+
+    function updateStats() {
+      const pending = allBookings.filter(b => b.status === 'pending').length;
+      const confirmed = allBookings.filter(b => b.status === 'confirmed').length;
+
+      const now = new Date();
+      const thisMonth = allBookings.filter(b => {
+        const createdAt = new Date(b.createdAt);
+        return createdAt.getMonth() === now.getMonth() &&
+               createdAt.getFullYear() === now.getFullYear();
+      }).length;
+
+      const revenue = allBookings
+        .filter(b => b.status === 'confirmed')
+        .reduce((sum, b) => sum + b.totalPrice, 0);
+
+      document.getElementById('stat-pending').textContent = pending;
+      document.getElementById('stat-confirmed').textContent = confirmed;
+      document.getElementById('stat-month').textContent = thisMonth;
+      document.getElementById('stat-revenue').textContent = '$' + revenue.toLocaleString('es-CL');
+    }
+
+    function renderBookings(bookings) {
+      const tbody = document.getElementById('bookings-tbody');
+
+      if (bookings.length === 0) {
+        tbody.innerHTML = `
+          <tr>
+            <td colspan="9" class="empty-state">
+              <div>No hay reservas para mostrar</div>
+            </td>
+          </tr>
+        `;
+        return;
+      }
+
+      tbody.innerHTML = bookings.map(booking => `
+        <tr>
+          <td><strong>${booking.id.substring(0, 12)}...</strong></td>
+          <td>${formatDate(booking.createdAt, true)}</td>
+          <td>${booking.guestName}</td>
+          <td>${getRoomName(booking.room)}</td>
+          <td>${formatDate(booking.checkIn)}</td>
+          <td>${formatDate(booking.checkOut)}</td>
+          <td><strong>$${booking.totalPrice.toLocaleString('es-CL')}</strong></td>
+          <td><span class="status-badge status-${booking.status}">${getStatusText(booking.status)}</span></td>
+          <td>
+            <div class="action-btns">
+              <button class="action-btn btn-view" onclick="viewBooking('${booking.id}')">
+                Ver
+              </button>
+              ${booking.status === 'pending' ? `
+                <button class="action-btn btn-confirm" onclick="confirmBooking('${booking.id}')">
+                  Confirmar
+                </button>
+                <button class="action-btn btn-reject" onclick="rejectBooking('${booking.id}')">
+                  Rechazar
+                </button>
+              ` : ''}
+            </div>
+          </td>
+        </tr>
+      `).join('');
+    }
+
+    function filterBookings() {
+      const status = document.getElementById('filter-status').value;
+      const room = document.getElementById('filter-room').value;
+
+      let filtered = allBookings;
+
+      if (status) {
+        filtered = filtered.filter(b => b.status === status);
+      }
+
+      if (room) {
+        filtered = filtered.filter(b => b.room === room);
+      }
+
+      renderBookings(filtered);
+    }
+
+    function viewBooking(id) {
+      const booking = allBookings.find(b => b.id === id);
+      if (!booking) return;
+
+      const modalBody = document.getElementById('modal-body');
+      modalBody.innerHTML = `
+        <div class="detail-row">
+          <span class="detail-label">ID de Reserva:</span>
+          <span>${booking.id}</span>
+        </div>
+        <div class="detail-row">
+          <span class="detail-label">Estado:</span>
+          <span class="status-badge status-${booking.status}">${getStatusText(booking.status)}</span>
+        </div>
+        <div class="detail-row">
+          <span class="detail-label">Habitación:</span>
+          <span>${getRoomName(booking.room)}</span>
+        </div>
+        <div class="detail-row">
+          <span class="detail-label">Check-in:</span>
+          <span>${formatDate(booking.checkIn)} (15:00)</span>
+        </div>
+        <div class="detail-row">
+          <span class="detail-label">Check-out:</span>
+          <span>${formatDate(booking.checkOut)} (11:00)</span>
+        </div>
+        <div class="detail-row">
+          <span class="detail-label">Noches:</span>
+          <span>${calculateNights(booking.checkIn, booking.checkOut)}</span>
+        </div>
+        <div class="detail-row">
+          <span class="detail-label">Huéspedes:</span>
+          <span>${booking.guests} persona(s)</span>
+        </div>
+        <div class="detail-row">
+          <span class="detail-label">Nombre:</span>
+          <span>${booking.guestName}</span>
+        </div>
+        <div class="detail-row">
+          <span class="detail-label">Email:</span>
+          <span><a href="mailto:${booking.guestEmail}">${booking.guestEmail}</a></span>
+        </div>
+        <div class="detail-row">
+          <span class="detail-label">Teléfono:</span>
+          <span><a href="tel:${booking.guestPhone}">${booking.guestPhone}</a></span>
+        </div>
+        ${booking.comments ? `
+        <div class="detail-row">
+          <span class="detail-label">Comentarios:</span>
+          <span>${booking.comments}</span>
+        </div>
+        ` : ''}
+        <div class="detail-row">
+          <span class="detail-label">Total:</span>
+          <span><strong>$${booking.totalPrice.toLocaleString('es-CL')} CLP</strong></span>
+        </div>
+        <div class="detail-row">
+          <span class="detail-label">Creada:</span>
+          <span>${formatDate(booking.createdAt, true)}</span>
+        </div>
+      `;
+
+      document.getElementById('booking-modal').classList.add('active');
+    }
+
+    function closeModal() {
+      document.getElementById('booking-modal').classList.remove('active');
+    }
+
+    async function confirmBooking(id) {
+      if (!confirm('¿Confirmar esta reserva?')) return;
+
+      try {
+        const response = await fetch(`${API_URL}/bookings/${id}/status`, {
+          method: 'PATCH',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ status: 'confirmed' })
+        });
+
+        if (response.ok) {
+          alert('Reserva confirmada. Se envió email al huésped.');
+          loadBookings();
+        } else {
+          alert('Error al confirmar la reserva');
+        }
+      } catch (error) {
+        console.error('Error:', error);
+        alert('Error al confirmar la reserva');
+      }
+    }
+
+    async function rejectBooking(id) {
+      const reason = prompt('Motivo del rechazo (opcional):');
+      if (reason === null) return;
+
+      try {
+        const response = await fetch(`${API_URL}/bookings/${id}/status`, {
+          method: 'PATCH',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ status: 'rejected', reason })
+        });
+
+        if (response.ok) {
+          alert('Reserva rechazada. Se envió email al huésped.');
+          loadBookings();
+        } else {
+          alert('Error al rechazar la reserva');
+        }
+      } catch (error) {
+        console.error('Error:', error);
+        alert('Error al rechazar la reserva');
+      }
+    }
+
+    // Helper functions
+    function getRoomName(room) {
+      const names = {
+        tehuelche: 'Tehuelche',
+        yaganes: 'Yaganes',
+        chonos: 'Chonos'
+      };
+      return names[room] || room;
+    }
+
+    function getStatusText(status) {
+      const texts = {
+        pending: 'Pendiente',
+        confirmed: 'Confirmada',
+        rejected: 'Rechazada',
+        cancelled: 'Cancelada'
+      };
+      return texts[status] || status;
+    }
+
+    function formatDate(dateString, includeTime = false) {
+      const date = new Date(dateString);
+      const options = { year: 'numeric', month: 'short', day: 'numeric' };
+
+      if (includeTime) {
+        options.hour = '2-digit';
+        options.minute = '2-digit';
+      }
+
+      return date.toLocaleDateString('es-CL', options);
+    }
+
+    function calculateNights(checkIn, checkOut) {
+      const diff = new Date(checkOut) - new Date(checkIn);
+      return Math.ceil(diff / (1000 * 60 * 60 * 24));
+    }
+
+    // Close modal on outside click
+    document.getElementById('booking-modal').addEventListener('click', (e) => {
+      if (e.target.id === 'booking-modal') {
+        closeModal();
+      }
+    });
+
+    // NEW BOOKING FUNCTIONS
+    function openNewBookingModal() {
+      document.getElementById('new-booking-modal').classList.add('active');
+      // Set min date to today
+      const today = new Date().toISOString().split('T')[0];
+      document.getElementById('new-checkIn').setAttribute('min', today);
+      document.getElementById('new-checkOut').setAttribute('min', today);
+    }
+
+    function closeNewBookingModal() {
+      document.getElementById('new-booking-modal').classList.remove('active');
+      document.getElementById('new-booking-form').reset();
+      document.getElementById('new-booking-error').style.display = 'none';
+    }
+
+    // Handle new booking form submission
+    document.getElementById('new-booking-form').addEventListener('submit', async (e) => {
+      e.preventDefault();
+
+      const formData = {
+        room: document.getElementById('new-room').value,
+        checkIn: document.getElementById('new-checkIn').value,
+        checkOut: document.getElementById('new-checkOut').value,
+        guests: parseInt(document.getElementById('new-guests').value),
+        guestName: document.getElementById('new-guestName').value,
+        guestEmail: document.getElementById('new-guestEmail').value,
+        guestPhone: document.getElementById('new-guestPhone').value,
+        comments: document.getElementById('new-comments').value,
+        status: document.getElementById('new-status').value
+      };
+
+      // Add source to comments if selected
+      const source = document.getElementById('new-source').value;
+      if (source && formData.comments) {
+        formData.comments = `[${source}] ${formData.comments}`;
+      } else if (source) {
+        formData.comments = `[Reserva de ${source}]`;
+      }
+
+      try {
+        const response = await fetch(`${API_URL}/bookings`, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(formData)
+        });
+
+        const data = await response.json();
+
+        if (!response.ok) {
+          throw new Error(data.error || data.message || 'Error al crear la reserva');
+        }
+
+        // If status is confirmed, update it
+        if (formData.status === 'confirmed' && data.booking) {
+          await fetch(`${API_URL}/bookings/${data.booking.id}/status`, {
+            method: 'PATCH',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ status: 'confirmed' })
+          });
+        }
+
+        alert('✅ Reserva creada exitosamente!');
+        closeNewBookingModal();
+        loadBookings();
+
+      } catch (error) {
+        console.error('Error creating booking:', error);
+        const errorEl = document.getElementById('new-booking-error');
+        errorEl.innerHTML = `<div class="error">${error.message}</div>`;
+        errorEl.style.display = 'block';
+      }
+    });
+
+    // Close new booking modal on outside click
+    document.getElementById('new-booking-modal').addEventListener('click', (e) => {
+      if (e.target.id === 'new-booking-modal') {
+        closeNewBookingModal();
+      }
+    });
+
+    // Auto-set checkout when checkin changes
+    document.getElementById('new-checkIn').addEventListener('change', (e) => {
+      const checkIn = new Date(e.target.value);
+      const checkOut = new Date(checkIn);
+      checkOut.setDate(checkOut.getDate() + 1); // Default 1 night
+
+      const checkOutInput = document.getElementById('new-checkOut');
+      checkOutInput.value = checkOut.toISOString().split('T')[0];
+      checkOutInput.setAttribute('min', checkOut.toISOString().split('T')[0]);
+    });
+  </script>
+</body>
+</html>

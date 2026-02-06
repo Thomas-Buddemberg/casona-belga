@@ -8,6 +8,8 @@ const express = require('express');
 const cors = require('cors');
 const { GoogleGenerativeAI } = require('@google/generative-ai');
 const knowledgeBase = require('./knowledge-base');
+const { Booking, ROOMS, STATUS } = require('./models/Booking');
+const emailService = require('./services/emailService');
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -156,6 +158,255 @@ app.post('/api/chat/reset', (req, res) => {
   }
 
   res.json({ message: 'Conversation reset successfully' });
+});
+
+// ========================================
+// BOOKING SYSTEM ENDPOINTS
+// ========================================
+
+// Get all bookings (admin)
+app.get('/api/bookings', (req, res) => {
+  try {
+    const { status, room } = req.query;
+    let bookings = Booking.getAll();
+
+    // Filter by status if provided
+    if (status) {
+      bookings = bookings.filter(b => b.status === status);
+    }
+
+    // Filter by room if provided
+    if (room) {
+      bookings = bookings.filter(b => b.room === room);
+    }
+
+    // Sort by creation date (newest first)
+    bookings.sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt));
+
+    res.json({ bookings });
+  } catch (error) {
+    console.error('Error fetching bookings:', error);
+    res.status(500).json({ error: 'Error fetching bookings' });
+  }
+});
+
+// Get booking by ID
+app.get('/api/bookings/:id', (req, res) => {
+  try {
+    const booking = Booking.getById(req.params.id);
+
+    if (!booking) {
+      return res.status(404).json({ error: 'Booking not found' });
+    }
+
+    res.json({ booking });
+  } catch (error) {
+    console.error('Error fetching booking:', error);
+    res.status(500).json({ error: 'Error fetching booking' });
+  }
+});
+
+// Create new booking request
+app.post('/api/bookings', async (req, res) => {
+  try {
+    const bookingData = req.body;
+    const booking = new Booking(bookingData);
+
+    // Validate booking data
+    const errors = booking.validate();
+    if (errors.length > 0) {
+      return res.status(400).json({ errors });
+    }
+
+    // Check availability
+    const isAvailable = Booking.isAvailable(
+      booking.room,
+      booking.checkIn,
+      booking.checkOut
+    );
+
+    if (!isAvailable) {
+      return res.status(409).json({
+        error: 'Room not available for selected dates',
+        message: 'La habitación no está disponible para las fechas seleccionadas'
+      });
+    }
+
+    // Save booking
+    const saved = Booking.save(booking);
+    if (!saved) {
+      return res.status(500).json({ error: 'Error saving booking' });
+    }
+
+    // Send email notifications
+    try {
+      await emailService.sendBookingRequestToGuest(booking);
+      await emailService.sendBookingRequestToAdmin(booking);
+    } catch (emailError) {
+      console.error('Error sending emails:', emailError);
+      // Continue anyway - booking is saved
+    }
+
+    res.status(201).json({
+      message: 'Booking request created successfully',
+      booking: booking.toJSON()
+    });
+  } catch (error) {
+    console.error('Error creating booking:', error);
+    res.status(500).json({ error: 'Error creating booking request' });
+  }
+});
+
+// Update booking status (admin)
+app.patch('/api/bookings/:id/status', async (req, res) => {
+  try {
+    const { status, reason } = req.body;
+    const booking = Booking.getById(req.params.id);
+
+    if (!booking) {
+      return res.status(404).json({ error: 'Booking not found' });
+    }
+
+    // Validate status
+    if (!Object.values(STATUS).includes(status)) {
+      return res.status(400).json({ error: 'Invalid status' });
+    }
+
+    // Update status
+    booking.status = status;
+    booking.updatedAt = new Date().toISOString();
+
+    const saved = Booking.save(booking);
+    if (!saved) {
+      return res.status(500).json({ error: 'Error updating booking' });
+    }
+
+    // Send appropriate email notification
+    try {
+      if (status === STATUS.CONFIRMED) {
+        await emailService.sendBookingConfirmation(booking);
+      } else if (status === STATUS.REJECTED) {
+        await emailService.sendBookingRejection(booking, reason);
+      }
+    } catch (emailError) {
+      console.error('Error sending email:', emailError);
+    }
+
+    res.json({
+      message: 'Booking status updated',
+      booking: booking.toJSON()
+    });
+  } catch (error) {
+    console.error('Error updating booking status:', error);
+    res.status(500).json({ error: 'Error updating booking status' });
+  }
+});
+
+// Delete booking (admin)
+app.delete('/api/bookings/:id', (req, res) => {
+  try {
+    const deleted = Booking.delete(req.params.id);
+
+    if (!deleted) {
+      return res.status(404).json({ error: 'Booking not found' });
+    }
+
+    res.json({ message: 'Booking deleted successfully' });
+  } catch (error) {
+    console.error('Error deleting booking:', error);
+    res.status(500).json({ error: 'Error deleting booking' });
+  }
+});
+
+// Get availability calendar for a room
+app.get('/api/availability/:room', (req, res) => {
+  try {
+    const { room } = req.params;
+    const { year, month } = req.query;
+
+    // Validate room
+    if (!Object.values(ROOMS).includes(room)) {
+      return res.status(400).json({ error: 'Invalid room' });
+    }
+
+    // Validate year and month
+    const currentYear = year ? parseInt(year) : new Date().getFullYear();
+    const currentMonth = month ? parseInt(month) : new Date().getMonth() + 1;
+
+    if (currentMonth < 1 || currentMonth > 12) {
+      return res.status(400).json({ error: 'Invalid month' });
+    }
+
+    // Get occupied dates for the room
+    const occupiedDates = Booking.getOccupiedDates(room, currentYear, currentMonth);
+
+    res.json({
+      room,
+      year: currentYear,
+      month: currentMonth,
+      occupiedDates,
+      availableDates: [] // Client will calculate this
+    });
+  } catch (error) {
+    console.error('Error fetching availability:', error);
+    res.status(500).json({ error: 'Error fetching availability' });
+  }
+});
+
+// Get availability for all rooms for a specific month
+app.get('/api/availability', (req, res) => {
+  try {
+    const { year, month } = req.query;
+
+    const currentYear = year ? parseInt(year) : new Date().getFullYear();
+    const currentMonth = month ? parseInt(month) : new Date().getMonth() + 1;
+
+    if (currentMonth < 1 || currentMonth > 12) {
+      return res.status(400).json({ error: 'Invalid month' });
+    }
+
+    const availability = {};
+
+    Object.values(ROOMS).forEach(room => {
+      availability[room] = Booking.getOccupiedDates(room, currentYear, currentMonth);
+    });
+
+    res.json({
+      year: currentYear,
+      month: currentMonth,
+      availability
+    });
+  } catch (error) {
+    console.error('Error fetching availability:', error);
+    res.status(500).json({ error: 'Error fetching availability' });
+  }
+});
+
+// Check if specific dates are available
+app.post('/api/availability/check', (req, res) => {
+  try {
+    const { room, checkIn, checkOut } = req.body;
+
+    if (!room || !checkIn || !checkOut) {
+      return res.status(400).json({ error: 'Room, checkIn and checkOut are required' });
+    }
+
+    if (!Object.values(ROOMS).includes(room)) {
+      return res.status(400).json({ error: 'Invalid room' });
+    }
+
+    const isAvailable = Booking.isAvailable(room, checkIn, checkOut);
+
+    res.json({
+      room,
+      checkIn,
+      checkOut,
+      available: isAvailable
+    });
+  } catch (error) {
+    console.error('Error checking availability:', error);
+    res.status(500).json({ error: 'Error checking availability' });
+  }
 });
 
 // Start server
