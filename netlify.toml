@@ -1,0 +1,54 @@
+# Configuración de Netlify para Casona Belga
+
+[build]
+  # No necesitamos proceso de build porque es un sitio estático
+  publish = "."
+
+[[redirects]]
+  # Redirigir www a dominio principal
+  from = "https://www.casonabelga.cl/*"
+  to = "https://casonabelga.cl/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  # Asegurar que las páginas HTML funcionen sin extensión
+  from = "/carta"
+  to = "/carta.html"
+  status = 200
+
+[[redirects]]
+  from = "/habitaciones"
+  to = "/habitaciones.html"
+  status = 200
+
+[[redirects]]
+  from = "/contacto"
+  to = "/contacto.html"
+  status = 200
+
+[[headers]]
+  # Headers de seguridad para todas las páginas
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "DENY"
+    X-XSS-Protection = "1; mode=block"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+
+[[headers]]
+  # Headers específicos para assets
+  for = "/assets/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  # Headers para CSS y JS
+  for = "/*.css"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/*.js"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
