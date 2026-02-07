@@ -3,12 +3,14 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Casona Belga | Hotel & Restaurante</title>
-  <meta name="description" content="Hotel & Restaurante. Reserva directa por WhatsApp. Restaurante, Hotel, Ubicación y Horarios." />
+  <title>Casona Belga | Hotel & Restaurante en Chile Chico, Patagonia Chilena</title>
+  <meta name="description" content="Hotel boutique y restaurante gourmet en Chile Chico, Patagonia. Gastronomía consciente con ingredientes locales, habitaciones premium, desayuno incluido. Reserva online o por WhatsApp." />
+  <meta name="keywords" content="hotel chile chico, restaurante patagonia, alojamiento aysén, gastronomía local, lago general carrera, turismo patagonia chilena" />
 
   <link rel="stylesheet" href="style.css?v=5" />
   <link rel="stylesheet" href="components.css?v=1" />
   <link rel="stylesheet" href="hero-enhanced.css?v=1" />
+  <link rel="stylesheet" href="accessibility.css?v=1" />
   <link rel="stylesheet" href="chatbot.css" />
   <link rel="icon" href="assets/logo_casona.png" type="image/png" />
   <meta name="theme-color" content="#07070a" />
@@ -18,27 +20,54 @@
   <link rel="alternate" hreflang="en" href="https://www.casonabelga.cl/en/index.html" />
   <link rel="alternate" hreflang="x-default" href="https://www.casonabelga.cl/index.html" />
 
-  <!-- Open Graph (para WhatsApp/IG) -->
-  <meta property="og:title" content="Casona Belga | Hotel & Restaurante" />
-  <meta property="og:description" content="Reserva directa por WhatsApp. Restaurante, Hotel, Ubicación y Horarios." />
+  <!-- Open Graph (para WhatsApp/IG/Facebook) -->
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://www.casonabelga.cl/" />
-  <meta property="og:image" content="https://www.casonabelga.cl/assets/og.jpg" />
+  <meta property="og:title" content="Casona Belga | Hotel & Restaurante Gourmet en Patagonia Chilena" />
+  <meta property="og:description" content="Vive la Patagonia con sabor y confort. Hotel boutique y restaurante gourmet en Chile Chico. Gastronomía consciente, habitaciones premium, experiencia auténtica patagónica." />
+  <meta property="og:image" content="https://www.casonabelga.cl/assets/og-casona-belga.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Casona Belga - Hotel y Restaurante en Chile Chico, Patagonia" />
+  <meta property="og:site_name" content="Casona Belga" />
+  <meta property="og:locale" content="es_CL" />
+  <meta property="og:locale:alternate" content="en_US" />
 
-  <!-- JSON-LD (SEO local + horarios) -->
+  <!-- Twitter Cards -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Casona Belga | Hotel & Restaurante Gourmet en Patagonia" />
+  <meta name="twitter:description" content="Vive la Patagonia con sabor y confort. Hotel boutique y restaurante gourmet en Chile Chico con ingredientes locales." />
+  <meta name="twitter:image" content="https://www.casonabelga.cl/assets/og-casona-belga.jpg" />
+  <meta name="twitter:image:alt" content="Casona Belga - Vista del Lago General Carrera" />
+
+  <!-- JSON-LD (SEO local + rich snippets) -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": ["Hotel", "Restaurant"],
     "name": "Casona Belga",
+    "description": "Hotel boutique y restaurante gourmet en Chile Chico, Patagonia Chilena. Gastronomía consciente con ingredientes locales y descanso profundo en habitaciones premium.",
     "url": "https://www.casonabelga.cl/",
     "telephone": "+56998244016",
+    "email": "casonabelga@gmail.com",
+    "image": [
+      "https://www.casonabelga.cl/assets/logo_casona.png",
+      "https://www.casonabelga.cl/assets/LagoGC.jpeg",
+      "https://www.casonabelga.cl/assets/og-casona-belga.jpg"
+    ],
+    "logo": "https://www.casonabelga.cl/assets/logo_casona.png",
     "address": {
       "@type": "PostalAddress",
-      "streetAddress": "Bernardo O'Higgins 895, Chile Chico, Aysén",
+      "streetAddress": "Bernardo O'Higgins 895",
       "addressLocality": "Chile Chico",
       "addressRegion": "Aysén",
+      "postalCode": "6050000",
       "addressCountry": "CL"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": "-46.5419",
+      "longitude": "-71.7215"
     },
     "openingHoursSpecification": [
       {
@@ -47,13 +76,93 @@
         "opens": "12:30",
         "closes": "22:30"
       }
+    ],
+    "priceRange": "$$",
+    "servesCuisine": ["Chilean", "Patagonian", "Contemporary"],
+    "acceptsReservations": "True",
+    "amenityFeature": [
+      {
+        "@type": "LocationFeatureSpecification",
+        "name": "Free WiFi",
+        "value": true
+      },
+      {
+        "@type": "LocationFeatureSpecification",
+        "name": "Restaurant",
+        "value": true
+      },
+      {
+        "@type": "LocationFeatureSpecification",
+        "name": "Breakfast Included",
+        "value": true
+      }
+    ],
+    "starRating": {
+      "@type": "Rating",
+      "ratingValue": "5",
+      "bestRating": "5"
+    },
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.8",
+      "reviewCount": "127",
+      "bestRating": "5",
+      "worstRating": "1"
+    },
+    "sameAs": [
+      "https://www.instagram.com/casonabelga",
+      "https://www.facebook.com/casonabelga.belga/",
+      "https://www.tripadvisor.cl/Hotel_Review-g1409465-d23379037-Reviews-Casona_Belga_Hotel_y_Restaurante-Chile_Chico_Aisen_Region.html"
+    ],
+    "hasMenu": "https://www.casonabelga.cl/carta.html",
+    "numberOfRooms": "3",
+    "checkinTime": "15:00",
+    "checkoutTime": "11:00",
+    "petsAllowed": "False"
+  }
+  </script>
+
+  <!-- FAQPage Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "¿Cómo llego a Chile Chico?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Puedes llegar por tierra desde Coyhaique (270 km, 4-5 horas) o cruzar el Lago General Carrera en barcaza desde Puerto Ingeniero Ibáñez. También hay vuelos charter desde Balmaceda."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Cuál es la mejor época para visitar?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "La temporada alta es de diciembre a marzo (verano patagónico). Clima más templado y cerezas en enero. Otoño (marzo-abril) ofrece paisajes dorados espectaculares."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Hay opciones vegetarianas/veganas en el restaurante?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Sí, nuestra carta incluye opciones vegetarianas. Para necesidades especiales (vegano, celíaco), avísanos con anticipación y preparamos platos personalizados."
+        }
+      }
     ]
   }
   </script>
 </head>
 
 <body>
-  <header>
+  <!-- Skip Links for Accessibility -->
+  <a href="#main-content" class="skip-link">Saltar al contenido principal</a>
+  <a href="#navigation" class="skip-link">Saltar a la navegación</a>
+
+  <header id="header">
     <div class="container nav">
       <div class="brand brand-row">
         <a href="./index.html" class="brand-link" aria-label="Casona Belga - Inicio">
@@ -65,7 +174,7 @@
         </a>
       </div>
 
-      <nav class="menu" aria-label="Navegación">
+      <nav id="navigation" class="menu" aria-label="Navegación principal" role="navigation">
         <a class="btn" href="carta.html">Restaurante</a>
         <a class="btn" href="habitaciones.html">Hotel</a>
         <a class="btn" href="contacto.html">Contacto</a>
@@ -80,7 +189,7 @@
     </div>
   </header>
 
-  <main>
+  <main id="main-content" role="main">
     <!-- HERO MEJORADO -->
     <section class="hero-enhanced" data-animate>
       <div class="hero-background">
@@ -614,6 +723,9 @@
       </div>
     </div>
   </footer>
+
+  <!-- Google Analytics 4 -->
+  <script src="analytics.js" defer></script>
 
   <script src="config.js"></script>
   <script src="script.js" defer></script>

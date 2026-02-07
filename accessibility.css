@@ -1,0 +1,455 @@
+/**
+ * ACCESSIBILITY ENHANCEMENTS
+ * WCAG 2.1 AA Compliance
+ */
+
+/* Skip Links - Allow keyboard users to skip to main content */
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  background: var(--copper-warm);
+  color: var(--black-carbon);
+  padding: var(--space-sm) var(--space-md);
+  text-decoration: none;
+  font-weight: 700;
+  z-index: 10000;
+  border-radius: 0 0 var(--radius-sm) 0;
+  transition: top var(--duration-fast) var(--ease-out);
+}
+
+.skip-link:focus {
+  top: 0;
+  outline: 3px solid var(--gold-soft);
+  outline-offset: 2px;
+}
+
+/* Enhanced Focus Indicators */
+a:focus,
+button:focus,
+input:focus,
+select:focus,
+textarea:focus,
+[tabindex]:focus {
+  outline: 3px solid var(--copper-warm);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+/* Focus visible only for keyboard navigation */
+a:focus:not(:focus-visible),
+button:focus:not(:focus-visible),
+input:focus:not(:focus-visible),
+select:focus:not(:focus-visible),
+textarea:focus:not(:focus-visible) {
+  outline: none;
+}
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+  outline: 3px solid var(--copper-warm);
+  outline-offset: 2px;
+}
+
+/* Ensure sufficient color contrast */
+.text-muted {
+  color: var(--beige-muted); /* Adjusted for better contrast */
+}
+
+/* Screen Reader Only Content */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+.sr-only-focusable:focus {
+  position: static;
+  width: auto;
+  height: auto;
+  overflow: visible;
+  clip: auto;
+  white-space: normal;
+}
+
+/* High Contrast Mode Support */
+@media (prefers-contrast: high) {
+  :root {
+    --text-primary: #ffffff;
+    --text-secondary: #e0e0e0;
+    --bg-base: #000000;
+    --border-medium: rgba(255, 255, 255, 0.4);
+  }
+
+  .btn,
+  .btn-hero {
+    border: 2px solid currentColor;
+  }
+
+  a {
+    text-decoration: underline;
+  }
+}
+
+/* Forced Colors Mode (Windows High Contrast) */
+@media (forced-colors: active) {
+  .btn,
+  .btn-hero,
+  .card {
+    border: 1px solid;
+  }
+
+  .hero-overlay {
+    background: transparent;
+  }
+}
+
+/* Keyboard Navigation Indicators */
+.nav a:focus,
+.menu a:focus {
+  background: var(--bg-elevated);
+  outline: 3px solid var(--copper-warm);
+}
+
+/* Touch Target Size (minimum 44x44px) */
+button,
+a.btn,
+.btn-hero,
+input[type="checkbox"],
+input[type="radio"] {
+  min-height: 44px;
+  min-width: 44px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Small text links need padding to meet touch target */
+a {
+  position: relative;
+}
+
+a::before {
+  content: '';
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  bottom: -8px;
+  left: -8px;
+}
+
+/* Exception for inline text links */
+p a::before,
+li a::before {
+  content: none;
+}
+
+/* Form Labels Always Visible */
+label {
+  display: block !important;
+  visibility: visible !important;
+}
+
+/* Placeholder is not a replacement for label */
+::-webkit-input-placeholder {
+  opacity: 0.6;
+}
+::-moz-placeholder {
+  opacity: 0.6;
+}
+:-ms-input-placeholder {
+  opacity: 0.6;
+}
+::placeholder {
+  opacity: 0.6;
+}
+
+/* Error Messages */
+[aria-invalid="true"] {
+  border-color: var(--error-base) !important;
+  border-width: 2px;
+}
+
+.form-error[role="alert"] {
+  color: var(--error-base);
+  font-weight: 600;
+}
+
+/* Live Region Polite Announcements */
+[aria-live="polite"],
+[aria-live="assertive"] {
+  position: absolute;
+  left: -10000px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+/* Focus Trap for Modals */
+.modal[aria-modal="true"] {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+}
+
+.modal[aria-modal="true"]:not([aria-hidden="true"]) {
+  display: flex;
+}
+
+/* Disabled State Clarity */
+button:disabled,
+input:disabled,
+select:disabled,
+textarea:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  position: relative;
+}
+
+button:disabled::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(
+    45deg,
+    transparent,
+    transparent 10px,
+    rgba(0, 0, 0, 0.05) 10px,
+    rgba(0, 0, 0, 0.05) 20px
+  );
+}
+
+/* Loading State for Screen Readers */
+[aria-busy="true"] {
+  position: relative;
+}
+
+[aria-busy="true"]::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(10, 9, 8, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .scroll-indicator {
+    animation: none;
+  }
+
+  .loading-spinner {
+    animation: none;
+  }
+}
+
+/* Dark Mode Accessibility */
+@media (prefers-color-scheme: dark) {
+  /* Already handled by design system, but ensure contrast */
+  :root {
+    --text-primary: #fafafa;
+    --text-secondary: #d4d4d4;
+    --bg-base: #0a0a0a;
+  }
+}
+
+/* Language Direction Support */
+[dir="rtl"] {
+  direction: rtl;
+  text-align: right;
+}
+
+[dir="rtl"] .nav {
+  flex-direction: row-reverse;
+}
+
+[dir="rtl"] .footer-grid {
+  direction: rtl;
+}
+
+/* Print Styles for Accessibility */
+@media print {
+  .skip-link,
+  .nav,
+  .footer-social,
+  .chatbot,
+  .btn-hero,
+  .scroll-indicator {
+    display: none !important;
+  }
+
+  body {
+    background: white;
+    color: black;
+  }
+
+  a {
+    text-decoration: underline;
+  }
+
+  a[href]::after {
+    content: " (" attr(href) ")";
+    font-size: 0.8em;
+  }
+
+  /* Don't print URLs for skip links and anchors */
+  a[href^="#"]::after,
+  a[href^="javascript:"]::after {
+    content: "";
+  }
+}
+
+/* Ensure images have proper alt text indicator in dev */
+img:not([alt]) {
+  outline: 3px solid red;
+}
+
+img[alt=""] {
+  outline: 3px solid orange;
+}
+
+/* Production: remove the above indicators */
+@media (min-width: 1px) {
+  img:not([alt]),
+  img[alt=""] {
+    outline: none;
+  }
+}
+
+/* Notification/Alert Accessibility */
+.alert[role="alert"],
+.alert[role="status"] {
+  position: relative;
+  padding-left: calc(var(--space-lg) + 24px);
+}
+
+.alert-icon {
+  position: absolute;
+  left: var(--space-md);
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+/* Table Accessibility */
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+th {
+  text-align: left;
+  font-weight: 700;
+  background: var(--bg-elevated);
+  padding: var(--space-sm);
+}
+
+td {
+  padding: var(--space-sm);
+  border-top: 1px solid var(--border-subtle);
+}
+
+caption {
+  caption-side: top;
+  font-weight: 700;
+  padding: var(--space-sm);
+  text-align: left;
+}
+
+/* Landmark Regions Clear */
+header,
+main,
+footer,
+nav,
+aside,
+section[aria-label],
+section[aria-labelledby] {
+  position: relative;
+}
+
+/* Breadcrumb Accessibility */
+.breadcrumb {
+  display: flex;
+  flex-wrap: wrap;
+  padding: var(--space-sm) 0;
+  list-style: none;
+}
+
+.breadcrumb-item + .breadcrumb-item::before {
+  content: "/";
+  padding: 0 var(--space-xs);
+  color: var(--text-secondary);
+}
+
+.breadcrumb-item.active {
+  color: var(--text-primary);
+  font-weight: 600;
+}
+
+/* Tooltip Accessibility */
+[role="tooltip"] {
+  position: absolute;
+  z-index: 1000;
+  background: var(--bg-elevated);
+  color: var(--text-primary);
+  padding: var(--space-xs) var(--space-sm);
+  border-radius: var(--radius-sm);
+  font-size: var(--text-sm);
+  box-shadow: var(--shadow-md);
+  max-width: 250px;
+}
+
+/* Progress Indicator */
+[role="progressbar"] {
+  height: 8px;
+  background: var(--bg-elevated);
+  border-radius: var(--radius-full);
+  overflow: hidden;
+}
+
+[role="progressbar"]::before {
+  content: '';
+  display: block;
+  height: 100%;
+  background: var(--copper-warm);
+  width: var(--progress-value, 0%);
+  transition: width var(--duration-base) var(--ease-out);
+}
+
+/* Status Messages */
+[role="status"] {
+  padding: var(--space-sm);
+  border-radius: var(--radius-sm);
+  background: var(--info-light);
+  color: var(--info-dark);
+}
+
+/* Visually Hidden but Announced */
+.visually-hidden {
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
