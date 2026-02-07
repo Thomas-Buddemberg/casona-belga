@@ -1,0 +1,327 @@
+/**
+ * ENHANCED HERO SECTION
+ * Full-width hero with background image and powerful CTA
+ */
+
+/* Hero Enhanced */
+.hero-enhanced {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  margin-bottom: var(--space-3xl);
+}
+
+.hero-background {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.hero-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(10, 9, 8, 0.6) 0%,
+    rgba(10, 9, 8, 0.7) 50%,
+    rgba(10, 9, 8, 0.85) 100%
+  );
+}
+
+.hero-enhanced .container {
+  position: relative;
+  z-index: 1;
+  padding-top: var(--space-3xl);
+  padding-bottom: var(--space-3xl);
+}
+
+.hero-content {
+  max-width: 880px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.hero-title {
+  font-size: clamp(2.5rem, 6vw, 4.5rem);
+  font-weight: 800;
+  line-height: 1.1;
+  color: var(--bone-white);
+  margin-bottom: var(--space-md);
+  font-family: var(--font-serif);
+  letter-spacing: -0.02em;
+  text-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+}
+
+.hero-subtitle {
+  font-size: clamp(1.125rem, 2vw, 1.375rem);
+  line-height: 1.6;
+  color: var(--cream-warm);
+  margin-bottom: var(--space-xl);
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.hero-cta {
+  display: flex;
+  gap: var(--space-md);
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-bottom: var(--space-xl);
+}
+
+.btn-hero {
+  padding: var(--space-md) var(--space-xl);
+  border-radius: var(--radius-md);
+  font-size: var(--text-lg);
+  font-weight: 700;
+  text-decoration: none;
+  transition: all var(--duration-fast) var(--ease-out);
+  border: 2px solid transparent;
+  display: inline-block;
+  white-space: nowrap;
+}
+
+.btn-hero.primary {
+  background: var(--copper-warm);
+  color: var(--black-carbon);
+  box-shadow: 0 4px 16px rgba(205, 169, 120, 0.4);
+}
+
+.btn-hero.primary:hover {
+  background: var(--gold-soft);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 24px rgba(205, 169, 120, 0.5);
+}
+
+.btn-hero.primary:active {
+  transform: translateY(-1px);
+}
+
+.btn-hero.secondary {
+  background: rgba(250, 248, 245, 0.15);
+  color: var(--bone-white);
+  border-color: rgba(250, 248, 245, 0.3);
+  backdrop-filter: blur(10px);
+}
+
+.btn-hero.secondary:hover {
+  background: rgba(250, 248, 245, 0.25);
+  border-color: rgba(250, 248, 245, 0.5);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+}
+
+.hero-badges {
+  display: flex;
+  gap: var(--space-sm);
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.badge-elegant {
+  font-size: var(--text-sm);
+  color: var(--cream-warm);
+  padding: var(--space-xs) var(--space-md);
+  border-radius: var(--radius-full);
+  background: rgba(250, 248, 245, 0.1);
+  border: 1px solid rgba(250, 248, 245, 0.2);
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  backdrop-filter: blur(10px);
+}
+
+/* Scroll Indicator */
+.scroll-indicator {
+  position: absolute;
+  bottom: var(--space-xl);
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-xs);
+  cursor: pointer;
+  color: var(--cream-warm);
+  transition: all var(--duration-fast) var(--ease-out);
+  z-index: 2;
+}
+
+.scroll-indicator:hover {
+  color: var(--bone-white);
+  transform: translateX(-50%) translateY(4px);
+}
+
+.scroll-text {
+  font-size: var(--text-xs);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-weight: 600;
+}
+
+.scroll-arrow {
+  animation: scroll-bounce 2s infinite;
+}
+
+@keyframes scroll-bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(8px);
+  }
+}
+
+/* Section Compact */
+.section-compact {
+  padding: var(--space-xl) 0;
+}
+
+/* Footer Enhanced Styles */
+.brand-footer {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  margin-bottom: var(--space-md);
+}
+
+.logo-footer {
+  width: 48px;
+  height: 48px;
+  object-fit: contain;
+}
+
+.footer-social {
+  display: flex;
+  gap: var(--space-sm);
+  margin-top: var(--space-md);
+}
+
+.footer-social a {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--bg-elevated);
+  border-radius: 50%;
+  color: var(--text-secondary);
+  transition: all var(--duration-fast) var(--ease-out);
+}
+
+.footer-social a:hover {
+  background: var(--copper-warm);
+  color: var(--black-carbon);
+  transform: translateY(-3px);
+}
+
+.footer-divider {
+  border: 0;
+  border-top: 1px solid var(--border-subtle);
+  margin: var(--space-xl) 0 var(--space-lg) 0;
+  opacity: 0.5;
+}
+
+.footer-bottom-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: var(--space-md);
+}
+
+.footer-tagline {
+  font-size: var(--text-sm);
+  color: var(--text-secondary);
+  font-style: italic;
+}
+
+/* Utility Classes */
+.mb-xl {
+  margin-bottom: var(--space-xl);
+}
+
+.mt-lg {
+  margin-top: var(--space-lg);
+}
+
+.text-muted {
+  color: var(--text-secondary);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .hero-enhanced {
+    min-height: 80vh;
+  }
+
+  .hero-title {
+    font-size: 2rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1rem;
+  }
+
+  .hero-cta {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .btn-hero {
+    width: 100%;
+    text-align: center;
+  }
+
+  .hero-badges {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .badge-elegant {
+    text-align: center;
+  }
+
+  .scroll-indicator {
+    bottom: var(--space-md);
+  }
+
+  .footer-bottom-content {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+@media (max-width: 640px) {
+  .hero-enhanced {
+    min-height: 70vh;
+  }
+
+  .hero-content {
+    padding: 0 var(--space-md);
+  }
+}
+
+/* Prefers Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+  .scroll-arrow {
+    animation: none;
+  }
+
+  .btn-hero:hover,
+  .footer-social a:hover {
+    transform: none;
+  }
+}

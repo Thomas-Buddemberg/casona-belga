@@ -1,0 +1,284 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Página no encontrada | Casona Belga</title>
+  <meta name="description" content="La página que buscas no existe. Vuelve a la página principal de Casona Belga." />
+  <meta name="theme-color" content="#07070a" />
+  <meta name="robots" content="noindex, nofollow" />
+
+  <link rel="stylesheet" href="style.css?v=5" />
+  <link rel="stylesheet" href="components.css?v=1" />
+  <link rel="icon" href="assets/logo_casona.png" type="image/png" />
+
+  <style>
+    .error-page {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: var(--space-xl);
+      background: linear-gradient(
+        135deg,
+        var(--bg-base) 0%,
+        var(--charcoal-deep) 50%,
+        var(--bg-base) 100%
+      );
+    }
+
+    .error-content {
+      max-width: 640px;
+      margin: 0 auto;
+    }
+
+    .error-code {
+      font-size: clamp(6rem, 15vw, 12rem);
+      font-weight: 900;
+      line-height: 1;
+      background: linear-gradient(135deg, var(--copper-warm), var(--gold-soft));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: var(--space-md);
+      font-family: var(--font-serif);
+    }
+
+    .error-title {
+      font-size: var(--text-3xl);
+      color: var(--bone-white);
+      margin-bottom: var(--space-sm);
+      font-weight: 700;
+    }
+
+    .error-message {
+      font-size: var(--text-lg);
+      color: var(--text-secondary);
+      line-height: 1.6;
+      margin-bottom: var(--space-xl);
+    }
+
+    .error-links {
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-sm);
+      margin-top: var(--space-xl);
+      align-items: center;
+    }
+
+    .error-search {
+      width: 100%;
+      max-width: 400px;
+      margin: var(--space-lg) auto;
+    }
+
+    .error-search-input {
+      width: 100%;
+      padding: var(--space-sm) var(--space-md);
+      background: var(--bg-elevated);
+      border: 2px solid var(--border-medium);
+      border-radius: var(--radius-full);
+      color: var(--text-primary);
+      font-size: var(--text-base);
+      transition: all var(--duration-fast) var(--ease-out);
+    }
+
+    .error-search-input:focus {
+      outline: none;
+      border-color: var(--copper-warm);
+      box-shadow: 0 0 0 3px rgba(205, 169, 120, 0.1);
+    }
+
+    .error-illustration {
+      margin: var(--space-2xl) 0;
+      opacity: 0.6;
+      font-size: 6rem;
+      animation: float 3s ease-in-out infinite;
+    }
+
+    @keyframes float {
+      0%, 100% {
+        transform: translateY(0);
+      }
+      50% {
+        transform: translateY(-20px);
+      }
+    }
+
+    .error-suggestions {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: var(--space-md);
+      margin-top: var(--space-2xl);
+    }
+
+    .error-suggestion-card {
+      background: var(--bg-elevated);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-md);
+      padding: var(--space-lg);
+      transition: all var(--duration-fast) var(--ease-out);
+      text-decoration: none;
+      color: var(--text-primary);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: var(--space-sm);
+    }
+
+    .error-suggestion-card:hover {
+      transform: translateY(-4px);
+      border-color: var(--copper-warm);
+      box-shadow: var(--shadow-md);
+    }
+
+    .error-suggestion-icon {
+      font-size: 2.5rem;
+    }
+
+    .error-suggestion-title {
+      font-weight: 700;
+      color: var(--bone-white);
+    }
+
+    .error-suggestion-desc {
+      font-size: var(--text-sm);
+      color: var(--text-secondary);
+      text-align: center;
+    }
+
+    @media (max-width: 640px) {
+      .error-code {
+        font-size: 5rem;
+      }
+
+      .error-title {
+        font-size: var(--text-2xl);
+      }
+
+      .error-message {
+        font-size: var(--text-base);
+      }
+
+      .error-suggestions {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .error-illustration {
+        animation: none;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="error-page">
+    <div class="error-content">
+      <div class="error-illustration" aria-hidden="true">
+        🗺️
+      </div>
+
+      <div class="error-code" aria-label="Error 404">404</div>
+
+      <h1 class="error-title">Página no encontrada</h1>
+
+      <p class="error-message">
+        Lo sentimos, la página que buscas no existe o ha sido movida.
+        ¿Te ayudamos a encontrar lo que necesitas?
+      </p>
+
+      <div class="error-search">
+        <input
+          type="search"
+          class="error-search-input"
+          placeholder="Buscar en Casona Belga..."
+          id="error-search"
+          aria-label="Buscar en el sitio"
+        />
+      </div>
+
+      <div class="error-suggestions">
+        <a href="index.html" class="error-suggestion-card">
+          <div class="error-suggestion-icon">🏠</div>
+          <div class="error-suggestion-title">Inicio</div>
+          <div class="error-suggestion-desc">Volver a la página principal</div>
+        </a>
+
+        <a href="habitaciones.html" class="error-suggestion-card">
+          <div class="error-suggestion-icon">🛏️</div>
+          <div class="error-suggestion-title">Hotel</div>
+          <div class="error-suggestion-desc">Ver habitaciones disponibles</div>
+        </a>
+
+        <a href="carta.html" class="error-suggestion-card">
+          <div class="error-suggestion-icon">🍽️</div>
+          <div class="error-suggestion-title">Restaurante</div>
+          <div class="error-suggestion-desc">Explorar el menú</div>
+        </a>
+
+        <a href="reservas.html" class="error-suggestion-card">
+          <div class="error-suggestion-icon">📅</div>
+          <div class="error-suggestion-title">Reservas</div>
+          <div class="error-suggestion-desc">Reservar habitación online</div>
+        </a>
+      </div>
+
+      <div class="error-links">
+        <p class="small text-muted" style="margin-top: var(--space-xl);">
+          ¿Necesitas ayuda? Contáctanos por
+          <a href="https://wa.me/message/TSCZUHZY7LTVJ1" target="_blank" rel="noopener" style="color: var(--copper-warm);">WhatsApp</a>
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Simple search functionality
+    const searchInput = document.getElementById('error-search');
+    const pages = [
+      { title: 'Inicio', url: 'index.html', keywords: ['inicio', 'home', 'principal'] },
+      { title: 'Restaurante', url: 'carta.html', keywords: ['restaurante', 'menu', 'carta', 'comida', 'platos'] },
+      { title: 'Hotel', url: 'habitaciones.html', keywords: ['hotel', 'habitaciones', 'rooms', 'alojamiento'] },
+      { title: 'Reservas', url: 'reservas.html', keywords: ['reservas', 'booking', 'reservar'] },
+      { title: 'Contacto', url: 'contacto.html', keywords: ['contacto', 'contact', 'ubicacion', 'telefono'] },
+    ];
+
+    searchInput.addEventListener('keypress', function(e) {
+      if (e.key === 'Enter') {
+        const query = this.value.toLowerCase().trim();
+
+        if (!query) {
+          window.location.href = 'index.html';
+          return;
+        }
+
+        // Find matching page
+        const match = pages.find(page =>
+          page.title.toLowerCase().includes(query) ||
+          page.keywords.some(keyword => keyword.includes(query))
+        );
+
+        if (match) {
+          window.location.href = match.url;
+        } else {
+          // Default to home
+          window.location.href = 'index.html';
+        }
+      }
+    });
+
+    // Track 404 errors (in production, send to analytics)
+    if (window.gtag) {
+      gtag('event', 'page_view', {
+        page_title: '404 - Page Not Found',
+        page_location: window.location.href,
+        page_path: window.location.pathname
+      });
+    }
+  </script>
+</body>
+</html>
