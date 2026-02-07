@@ -3,11 +3,15 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Reservas | Casona Belga</title>
-  <meta name="description" content="Reserva tu habitación en Casona Belga - Hotel en Chile Chico, Patagonia Chilena" />
-
+  <title>Reservas Online | Casona Belga - Hotel Boutique en Chile Chico, Patagonia</title>
+  <meta name="description" content="Reserva tu habitación online en Casona Belga. Sistema de reservas con calendario en tiempo real. 3 habitaciones con desayuno incluido, WiFi, baño privado. Check-in 15:00. Chile Chico, Aysén." />
+  <meta name="keywords" content="reservas chile chico, booking patagonia, reservar hotel aysén, habitaciones disponibles, sistema reservas online, hotel chile chico" />
   <meta name="theme-color" content="#07070a" />
-  <link rel="stylesheet" href="style.css?v=3" />
+
+  <link rel="stylesheet" href="style.css?v=5" />
+  <link rel="stylesheet" href="components.css?v=1" />
+  <link rel="stylesheet" href="accessibility.css?v=1" />
+  <link rel="stylesheet" href="theme-toggle.css?v=1" />
   <link rel="stylesheet" href="booking-calendar.css?v=1" />
   <link rel="icon" href="assets/logo_casona.png" type="image/png" />
 
@@ -15,14 +19,91 @@
   <link rel="alternate" hreflang="es" href="https://www.casonabelga.cl/reservas.html" />
   <link rel="alternate" hreflang="en" href="https://www.casonabelga.cl/en/bookings.html" />
   <link rel="alternate" hreflang="x-default" href="https://www.casonabelga.cl/index.html" />
+
+  <!-- Open Graph (WhatsApp/Facebook/Instagram) -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.casonabelga.cl/reservas.html" />
+  <meta property="og:title" content="Reservas Online | Casona Belga - Hotel Patagonia" />
+  <meta property="og:description" content="Reserva tu habitación en línea con nuestro sistema de calendario. Disponibilidad en tiempo real, desayuno incluido. Hotel boutique en Chile Chico." />
+  <meta property="og:image" content="https://www.casonabelga.cl/assets/og-casona-belga.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Reservas Casona Belga - Sistema Online" />
+  <meta property="og:site_name" content="Casona Belga" />
+  <meta property="og:locale" content="es_CL" />
+
+  <!-- Twitter Cards -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Reservas Online | Casona Belga Hotel" />
+  <meta name="twitter:description" content="Sistema de reservas online con calendario en tiempo real. Habitaciones boutique en Chile Chico, Patagonia." />
+  <meta name="twitter:image" content="https://www.casonabelga.cl/assets/og-casona-belga.jpg" />
+  <meta name="twitter:image:alt" content="Reservas Casona Belga" />
+
+  <!-- Schema.org JSON-LD for Hotel Booking -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Hotel",
+    "name": "Casona Belga",
+    "description": "Sistema de reservas online para hotel boutique en Chile Chico. 3 habitaciones con desayuno incluido, WiFi, baño privado.",
+    "url": "https://www.casonabelga.cl/reservas.html",
+    "telephone": "+56998244016",
+    "email": "casonabelga@gmail.com",
+    "image": "https://www.casonabelga.cl/assets/logo_casona.png",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Bernardo O'Higgins 895",
+      "addressLocality": "Chile Chico",
+      "addressRegion": "Aysén",
+      "postalCode": "6050000",
+      "addressCountry": "CL"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": "-46.5419",
+      "longitude": "-71.7215"
+    },
+    "checkinTime": "15:00",
+    "checkoutTime": "11:00",
+    "numberOfRooms": "3",
+    "priceRange": "$$",
+    "amenityFeature": [
+      {
+        "@type": "LocationFeatureSpecification",
+        "name": "Free WiFi",
+        "value": true
+      },
+      {
+        "@type": "LocationFeatureSpecification",
+        "name": "Breakfast Included",
+        "value": true
+      },
+      {
+        "@type": "LocationFeatureSpecification",
+        "name": "Private Bathroom",
+        "value": true
+      }
+    ],
+    "offers": {
+      "@type": "Offer",
+      "price": "95000",
+      "priceCurrency": "CLP",
+      "availability": "https://schema.org/InStock"
+    }
+  }
+  </script>
 </head>
 
 <body>
+  <!-- Skip Links for Accessibility -->
+  <a href="#main-content" class="skip-link">Saltar al contenido principal</a>
+  <a href="#navigation" class="skip-link">Saltar a la navegación</a>
+
   <header>
-    <div class="container nav">
+    <div class="container nav" id="navigation" role="navigation" aria-label="Navegación principal">
       <div class="brand brand-row">
         <a href="./index.html" class="brand-link" aria-label="Casona Belga - Inicio">
-          <img src="assets/logo_casona.png" alt="Logo Casona Belga" class="logo" />
+          <img src="assets/logo_casona.png" alt="Logo Casona Belga" class="logo" width="50" height="50" />
           <div class="brand-text">
             <strong>Casona Belga</strong>
             <span>Hotel · Reservas</span>
@@ -34,13 +115,13 @@
         <a class="btn" href="habitaciones.html">Habitaciones</a>
         <a class="btn" href="carta.html">Restaurante</a>
         <a class="btn" href="contacto.html">Contacto</a>
-        <a class="btn" href="en/bookings.html">ENGLISH</a>
-        <a class="btn primary" href="https://wa.me/message/TSCZUHZY7LTVJ1" target="_blank" rel="noopener">WhatsApp</a>
+        <a class="btn" href="en/bookings.html" lang="en">ENGLISH</a>
+        <a class="btn primary" href="https://wa.me/message/TSCZUHZY7LTVJ1" target="_blank" rel="noopener" aria-label="Contactar por WhatsApp">WhatsApp</a>
       </nav>
     </div>
   </header>
 
-  <main class="booking-wrapper">
+  <main class="booking-wrapper" id="main-content" role="main">
     <!-- Header -->
     <div class="booking-header">
       <h1>🛏️ Reserva tu Estadía</h1>
@@ -227,7 +308,7 @@
   </main>
 
   <!-- FOOTER -->
-  <footer class="footer">
+  <footer class="footer" role="contentinfo">
     <div class="container">
       <div class="footer-grid">
         <div class="footer-section">
@@ -239,12 +320,14 @@
 
         <div class="footer-section">
           <h4>Enlaces</h4>
-          <ul>
-            <li><a href="habitaciones.html">Hotel</a></li>
-            <li><a href="carta.html">Restaurante</a></li>
-            <li><a href="reservas.html">Reservas</a></li>
-            <li><a href="contacto.html">Contacto</a></li>
-          </ul>
+          <nav aria-label="Enlaces del sitio">
+            <ul>
+              <li><a href="habitaciones.html">Hotel</a></li>
+              <li><a href="carta.html">Restaurante</a></li>
+              <li><a href="reservas.html" aria-current="page">Reservas</a></li>
+              <li><a href="contacto.html">Contacto</a></li>
+            </ul>
+          </nav>
         </div>
 
         <div class="footer-section">
@@ -272,6 +355,12 @@
     // Configure API URL (change this to your production URL when deploying)
     window.BOOKING_API_URL = 'http://localhost:3000/api';
   </script>
+
+  <!-- Theme Toggle (load early to prevent flash) -->
+  <script src="theme-toggle.js"></script>
+
+  <!-- Analytics -->
+  <script src="analytics.js" defer></script>
 
   <script src="booking-calendar.js" defer></script>
 </body>

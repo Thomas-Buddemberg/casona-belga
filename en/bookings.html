@@ -3,13 +3,92 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Book Now | Casona Belga</title>
-  <meta name="description" content="Book your room at Casona Belga - Hotel in Chile Chico, Chilean Patagonia" />
+  <title>Book Now | Casona Belga Hotel in Chile Chico, Chilean Patagonia</title>
+  <meta name="description" content="Book your room at Casona Belga hotel in Chile Chico. Premium rooms with queen beds, private bathrooms, breakfast included. Check availability and reserve online or via WhatsApp." />
+  <meta name="keywords" content="book hotel Chile Chico, Casona Belga reservations, hotel booking Patagonia, Chile Chico accommodation, rooms Chile Chico, hotel availability Aysen" />
 
   <meta name="theme-color" content="#07070a" />
   <link rel="stylesheet" href="../style.css?v=3" />
+  <link rel="stylesheet" href="../components.css?v=1" />
+  <link rel="stylesheet" href="../accessibility.css?v=1" />
+  <link rel="stylesheet" href="../theme-toggle.css?v=1" />
   <link rel="stylesheet" href="../booking-calendar.css?v=1" />
   <link rel="icon" href="../assets/logo_casona.png" type="image/png" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Book Now | Casona Belga Hotel in Chile Chico" />
+  <meta property="og:description" content="Book your room at Casona Belga hotel in Chile Chico. Premium rooms with queen beds, private bathrooms, breakfast included. Check availability and reserve online." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.casonabelga.cl/en/bookings.html" />
+  <meta property="og:image" content="https://www.casonabelga.cl/assets/og.jpg" />
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:site_name" content="Casona Belga" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Book Now | Casona Belga Hotel" />
+  <meta name="twitter:description" content="Premium rooms in Chile Chico with breakfast included. Book online or via WhatsApp." />
+  <meta name="twitter:image" content="https://www.casonabelga.cl/assets/og.jpg" />
+
+  <!-- JSON-LD Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Hotel",
+    "name": "Casona Belga Hotel",
+    "description": "Boutique hotel in Chile Chico offering premium rooms with breakfast included",
+    "url": "https://www.casonabelga.cl/en/bookings.html",
+    "telephone": "+56998244016",
+    "email": "casonabelga@gmail.com",
+    "image": "https://www.casonabelga.cl/assets/og.jpg",
+    "priceRange": "$$",
+    "starRating": {
+      "@type": "Rating",
+      "ratingValue": "4"
+    },
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Bernardo O'Higgins 895",
+      "addressLocality": "Chile Chico",
+      "addressRegion": "Aysén",
+      "postalCode": "6050000",
+      "addressCountry": "CL"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": "-46.5419",
+      "longitude": "-71.7215"
+    },
+    "checkinTime": "15:00",
+    "checkoutTime": "11:00",
+    "amenityFeature": [
+      {
+        "@type": "LocationFeatureSpecification",
+        "name": "Free WiFi"
+      },
+      {
+        "@type": "LocationFeatureSpecification",
+        "name": "Breakfast Included"
+      },
+      {
+        "@type": "LocationFeatureSpecification",
+        "name": "Private Bathroom"
+      },
+      {
+        "@type": "LocationFeatureSpecification",
+        "name": "Heating"
+      },
+      {
+        "@type": "LocationFeatureSpecification",
+        "name": "Free Parking"
+      }
+    ],
+    "sameAs": [
+      "https://www.instagram.com/casonabelga",
+      "https://www.facebook.com/casonabelga.belga/"
+    ]
+  }
+  </script>
 
   <link rel="canonical" href="https://www.casonabelga.cl/en/bookings.html" />
   <link rel="alternate" hreflang="es" href="https://www.casonabelga.cl/reservas.html" />
@@ -18,11 +97,15 @@
 </head>
 
 <body>
+  <!-- Skip Links for Accessibility -->
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+  <a href="#navigation" class="skip-link">Skip to navigation</a>
+
   <header>
     <div class="container nav">
       <div class="brand brand-row">
         <a href="../index.html" class="brand-link" aria-label="Casona Belga - Home">
-          <img src="../assets/logo_casona.png" alt="Casona Belga Logo" class="logo" />
+          <img src="../assets/logo_casona.png" alt="Casona Belga Logo" class="logo" width="60" height="60" />
           <div class="brand-text">
             <strong>Casona Belga</strong>
             <span>Hotel · Bookings</span>
@@ -30,7 +113,7 @@
         </a>
       </div>
 
-      <nav class="menu">
+      <nav id="navigation" class="menu" role="navigation" aria-label="Main Navigation">
         <a class="btn" href="rooms.html">Rooms</a>
         <a class="btn" href="menu.html">Restaurant</a>
         <a class="btn" href="contact.html">Contact</a>
@@ -40,7 +123,7 @@
     </div>
   </header>
 
-  <main class="booking-wrapper">
+  <main id="main-content" class="booking-wrapper" role="main">
     <!-- Header -->
     <div class="booking-header">
       <h1>🛏️ Book Your Stay</h1>
@@ -227,7 +310,7 @@
   </main>
 
   <!-- FOOTER -->
-  <footer class="footer">
+  <footer class="footer" role="contentinfo">
     <div class="container">
       <div class="footer-grid">
         <div class="footer-section">
@@ -274,5 +357,11 @@
   </script>
 
   <script src="../booking-calendar.js" defer></script>
+
+  <!-- Theme Toggle (load early to prevent flash) -->
+  <script src="../theme-toggle.js"></script>
+
+  <!-- Analytics -->
+  <script src="../analytics.js" defer></script>
 </body>
 </html>

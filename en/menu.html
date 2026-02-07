@@ -3,13 +3,74 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Menu 2026 | Casona Belga</title>
-  <meta name="description" content="Casona Belga Restaurant Menu 2026. Book via WhatsApp." />
+  <title>Menu 2026 | Casona Belga Restaurant in Chile Chico</title>
+  <meta name="description" content="Discover our 2026 menu featuring conscious Patagonian cuisine with local ingredients. Fresh salmon, organic vegetables, artisan pasta, and craft cocktails. Book your table via WhatsApp." />
+  <meta name="keywords" content="Casona Belga menu, Chile Chico restaurant, Patagonian cuisine, organic food Chile Chico, restaurant menu Aysen, craft cocktails Patagonia, local ingredients" />
   <meta name="theme-color" content="#07070a" />
 
   <link rel="stylesheet" href="../style.css?v=3" />
+  <link rel="stylesheet" href="../components.css?v=1" />
+  <link rel="stylesheet" href="../accessibility.css?v=1" />
+  <link rel="stylesheet" href="../theme-toggle.css?v=1" />
   <link rel="stylesheet" href="../chatbot.css" />
   <link rel="icon" href="../assets/logo_casona.png" type="image/png" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Menu 2026 | Casona Belga Restaurant in Chile Chico" />
+  <meta property="og:description" content="Discover our 2026 menu featuring conscious Patagonian cuisine with local ingredients. Fresh salmon, organic vegetables, artisan pasta, and craft cocktails." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.casonabelga.cl/en/menu.html" />
+  <meta property="og:image" content="https://www.casonabelga.cl/assets/og.jpg" />
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:site_name" content="Casona Belga" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Menu 2026 | Casona Belga Restaurant" />
+  <meta name="twitter:description" content="Conscious Patagonian cuisine with local ingredients. Fresh salmon, organic vegetables, artisan pasta, and craft cocktails." />
+  <meta name="twitter:image" content="https://www.casonabelga.cl/assets/og.jpg" />
+
+  <!-- JSON-LD Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Restaurant",
+    "name": "Casona Belga Restaurant",
+    "description": "Conscious Patagonian cuisine with local and organic ingredients in Chile Chico",
+    "url": "https://www.casonabelga.cl/en/menu.html",
+    "telephone": "+56998244016",
+    "email": "casonabelga@gmail.com",
+    "image": "https://www.casonabelga.cl/assets/og.jpg",
+    "priceRange": "$$",
+    "servesCuisine": ["Patagonian", "Contemporary", "Organic"],
+    "menu": "https://www.casonabelga.cl/en/menu.html",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Bernardo O'Higgins 895",
+      "addressLocality": "Chile Chico",
+      "addressRegion": "Aysén",
+      "postalCode": "6050000",
+      "addressCountry": "CL"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": "-46.5419",
+      "longitude": "-71.7215"
+    },
+    "openingHoursSpecification": [
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
+        "opens": "12:30",
+        "closes": "22:30"
+      }
+    ],
+    "sameAs": [
+      "https://www.instagram.com/casonabelga",
+      "https://www.facebook.com/casonabelga.belga/"
+    ]
+  }
+  </script>
 
   <link rel="canonical" href="https://www.casonabelga.cl/en/menu.html" />
   <link rel="alternate" hreflang="en" href="https://www.casonabelga.cl/en/menu.html" />
@@ -18,11 +79,15 @@
 </head>
 
 <body>
+  <!-- Skip Links for Accessibility -->
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+  <a href="#navigation" class="skip-link">Skip to navigation</a>
+
   <header>
     <div class="container nav">
       <div class="brand brand-row">
         <a href="./index.html" class="brand-link" aria-label="Casona Belga - Home">
-          <img src="../assets/logo_casona.png" alt="Casona Belga logo" class="logo" />
+          <img src="../assets/logo_casona.png" alt="Casona Belga logo" class="logo" width="60" height="60" />
           <div class="brand-text">
             <strong>Casona Belga</strong>
             <span>Restaurant · 2026 Menu</span>
@@ -30,7 +95,7 @@
         </a>
       </div>
 
-      <nav class="menu">
+      <nav id="navigation" class="menu" role="navigation" aria-label="Main Navigation">
         <a class="btn" href="rooms.html">Rooms</a>
         <a class="btn" href="contact.html">Contact</a>
 
@@ -42,7 +107,7 @@
     </div>
   </header>
 
-  <main class="container section">
+  <main id="main-content" class="container section" role="main">
     <div>
       <h2>2026 Menu</h2>
       <p class="muted">Prices in CLP. For bookings or questions, message us on WhatsApp.</p>
@@ -200,7 +265,7 @@
   </main>
 
   <!-- ENHANCED FOOTER -->
-  <footer class="footer">
+  <footer class="footer" role="contentinfo">
     <div class="container">
       <div class="footer-grid">
         <div class="footer-section">
@@ -246,5 +311,11 @@
   <script src="../config.js"></script>
   <script src="../script.js" defer></script>
   <script src="../chatbot-ai-en.js" defer></script>
+
+  <!-- Theme Toggle (load early to prevent flash) -->
+  <script src="../theme-toggle.js"></script>
+
+  <!-- Analytics -->
+  <script src="../analytics.js" defer></script>
 </body>
 </html>

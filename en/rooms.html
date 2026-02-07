@@ -3,13 +3,94 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Rooms | Casona Belga</title>
-  <meta name="description" content="Rooms, rates from, policies, and availability inquiries via WhatsApp." />
+  <title>Rooms | Casona Belga Hotel in Chile Chico, Chilean Patagonia</title>
+  <meta name="description" content="Discover our 3 premium rooms: Tehuelche, Yaganes, and Chonos. Queen beds with optional single bed, private bathrooms, breakfast included. From $95,000 CLP per night. Book via WhatsApp." />
+  <meta name="keywords" content="hotel rooms Chile Chico, Casona Belga rooms, accommodation Chile Chico, hotel rates Patagonia, queen bed Chile Chico, breakfast included, private bathroom" />
   <meta name="theme-color" content="#07070a" />
 
   <link rel="stylesheet" href="../style.css?v=3" />
+  <link rel="stylesheet" href="../components.css?v=1" />
+  <link rel="stylesheet" href="../accessibility.css?v=1" />
+  <link rel="stylesheet" href="../theme-toggle.css?v=1" />
   <link rel="stylesheet" href="../chatbot.css" />
   <link rel="icon" href="../assets/logo_casona.png" type="image/png" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Rooms | Casona Belga Hotel in Chile Chico" />
+  <meta property="og:description" content="Discover our 3 premium rooms: Tehuelche, Yaganes, and Chonos. Queen beds with optional single bed, private bathrooms, breakfast included. From $95,000 CLP per night." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.casonabelga.cl/en/rooms.html" />
+  <meta property="og:image" content="https://www.casonabelga.cl/assets/og.jpg" />
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:site_name" content="Casona Belga" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Rooms | Casona Belga Hotel" />
+  <meta name="twitter:description" content="3 premium rooms with queen beds, private bathrooms, breakfast included. From $95,000 CLP per night in Chile Chico." />
+  <meta name="twitter:image" content="https://www.casonabelga.cl/assets/og.jpg" />
+
+  <!-- JSON-LD Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Hotel",
+    "name": "Casona Belga Hotel",
+    "description": "Boutique hotel in Chile Chico with 3 premium rooms: Tehuelche, Yaganes, and Chonos",
+    "url": "https://www.casonabelga.cl/en/rooms.html",
+    "telephone": "+56998244016",
+    "email": "casonabelga@gmail.com",
+    "image": "https://www.casonabelga.cl/assets/og.jpg",
+    "priceRange": "$$",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Bernardo O'Higgins 895",
+      "addressLocality": "Chile Chico",
+      "addressRegion": "Aysén",
+      "postalCode": "6050000",
+      "addressCountry": "CL"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": "-46.5419",
+      "longitude": "-71.7215"
+    },
+    "numberOfRooms": "3",
+    "checkinTime": "15:00",
+    "checkoutTime": "11:00",
+    "amenityFeature": [
+      {
+        "@type": "LocationFeatureSpecification",
+        "name": "Free WiFi"
+      },
+      {
+        "@type": "LocationFeatureSpecification",
+        "name": "Breakfast Included"
+      },
+      {
+        "@type": "LocationFeatureSpecification",
+        "name": "Private Bathroom"
+      },
+      {
+        "@type": "LocationFeatureSpecification",
+        "name": "Electric Heating"
+      },
+      {
+        "@type": "LocationFeatureSpecification",
+        "name": "Free Parking"
+      },
+      {
+        "@type": "LocationFeatureSpecification",
+        "name": "Work Desk"
+      }
+    ],
+    "petsAllowed": "Outside only",
+    "sameAs": [
+      "https://www.instagram.com/casonabelga",
+      "https://www.facebook.com/casonabelga.belga/"
+    ]
+  }
+  </script>
 
   <link rel="canonical" href="https://www.casonabelga.cl/en/rooms.html" />
   <link rel="alternate" hreflang="en" href="https://www.casonabelga.cl/en/rooms.html" />
@@ -18,11 +99,15 @@
 </head>
 
 <body>
+  <!-- Skip Links for Accessibility -->
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+  <a href="#navigation" class="skip-link">Skip to navigation</a>
+
   <header>
     <div class="container nav">
       <div class="brand brand-row">
         <a href="./index.html" class="brand-link" aria-label="Casona Belga - Home">
-          <img src="../assets/logo_casona.png" alt="Casona Belga logo" class="logo" />
+          <img src="../assets/logo_casona.png" alt="Casona Belga logo" class="logo" width="60" height="60" />
           <div class="brand-text">
             <strong>Casona Belga</strong>
             <span>Hotel · Rooms</span>
@@ -30,7 +115,7 @@
         </a>
       </div>
 
-      <nav class="menu">
+      <nav id="navigation" class="menu" role="navigation" aria-label="Main Navigation">
         <a class="btn" href="menu.html">Restaurant</a>
         <a class="btn" href="contact.html">Contact</a>
 
@@ -41,7 +126,7 @@
     </div>
   </header>
 
-  <main class="container section">
+  <main id="main-content" class="container section" role="main">
     <div>
       <h2>Rooms</h2>
       <p class="muted">
@@ -140,7 +225,7 @@
   </main>
 
   <!-- ENHANCED FOOTER -->
-  <footer class="footer">
+  <footer class="footer" role="contentinfo">
     <div class="container">
       <div class="footer-grid">
         <div class="footer-section">
@@ -186,5 +271,11 @@
   <script src="../config.js"></script>
   <script src="../script.js" defer></script>
   <script src="../chatbot-ai-en.js" defer></script>
+
+  <!-- Theme Toggle (load early to prevent flash) -->
+  <script src="../theme-toggle.js"></script>
+
+  <!-- Analytics -->
+  <script src="../analytics.js" defer></script>
 </body>
 </html>

@@ -3,11 +3,15 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Casona Belga | Hotel & Restaurant</title>
-  <meta name="description" content="Hotel & Restaurant. Book direct via WhatsApp. Menu, rooms, location and hours." />
+  <title>Casona Belga | Hotel & Restaurant in Chile Chico, Chilean Patagonia</title>
+  <meta name="description" content="Authentic Patagonian hotel and restaurant in Chile Chico. Conscious cuisine with local ingredients, deep rest in premium rooms. Book direct via WhatsApp." />
+  <meta name="keywords" content="hotel Chile Chico, restaurant Chile Chico, Patagonia hotel, Chilean Patagonia, Lake General Carrera, conscious cuisine, boutique hotel Aysen, Chile Chico accommodation" />
 
   <meta name="theme-color" content="#07070a" />
   <link rel="stylesheet" href="../style.css?v=3" />
+  <link rel="stylesheet" href="../components.css?v=1" />
+  <link rel="stylesheet" href="../accessibility.css?v=1" />
+  <link rel="stylesheet" href="../theme-toggle.css?v=1" />
   <link rel="stylesheet" href="../chatbot.css" />
   <link rel="icon" href="../assets/logo_casona.png" type="image/png" />
 
@@ -17,11 +21,19 @@
   <link rel="alternate" hreflang="x-default" href="https://www.casonabelga.cl/index.html" />
 
   <!-- Open Graph (WhatsApp/IG) -->
-  <meta property="og:title" content="Casona Belga | Hotel & Restaurant" />
-  <meta property="og:description" content="Book direct via WhatsApp. Menu, rooms, location and hours." />
+  <meta property="og:title" content="Casona Belga | Hotel & Restaurant in Chile Chico, Chilean Patagonia" />
+  <meta property="og:description" content="Authentic Patagonian hotel and restaurant in Chile Chico. Conscious cuisine with local ingredients, deep rest in premium rooms. Book direct via WhatsApp." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://www.casonabelga.cl/en/" />
   <meta property="og:image" content="https://www.casonabelga.cl/assets/og.jpg" />
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:site_name" content="Casona Belga" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Casona Belga | Hotel & Restaurant in Chile Chico" />
+  <meta name="twitter:description" content="Authentic Patagonian hotel and restaurant. Conscious cuisine with local ingredients, deep rest in premium rooms." />
+  <meta name="twitter:image" content="https://www.casonabelga.cl/assets/og.jpg" />
 
   <!-- JSON-LD (Local SEO + hours) -->
   <script type="application/ld+json">
@@ -29,14 +41,25 @@
     "@context": "https://schema.org",
     "@type": ["Hotel", "Restaurant"],
     "name": "Casona Belga",
+    "description": "Authentic Patagonian hotel and restaurant in Chile Chico. Conscious cuisine with local ingredients, deep rest in premium rooms.",
     "url": "https://www.casonabelga.cl/en/",
     "telephone": "+56998244016",
+    "email": "casonabelga@gmail.com",
+    "image": "https://www.casonabelga.cl/assets/og.jpg",
+    "priceRange": "$$",
+    "servesCuisine": ["Patagonian", "Contemporary", "Organic"],
     "address": {
       "@type": "PostalAddress",
-      "streetAddress": "Bernardo O'Higgins 895, Chile Chico, Aysén",
+      "streetAddress": "Bernardo O'Higgins 895",
       "addressLocality": "Chile Chico",
       "addressRegion": "Aysén",
+      "postalCode": "6050000",
       "addressCountry": "CL"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": "-46.5419",
+      "longitude": "-71.7215"
     },
     "openingHoursSpecification": [
       {
@@ -45,17 +68,25 @@
         "opens": "12:30",
         "closes": "22:30"
       }
+    ],
+    "sameAs": [
+      "https://www.instagram.com/casonabelga",
+      "https://www.facebook.com/casonabelga.belga/"
     ]
   }
   </script>
 </head>
 
 <body>
+  <!-- Skip Links for Accessibility -->
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+  <a href="#navigation" class="skip-link">Skip to navigation</a>
+
   <header>
     <div class="container nav">
       <div class="brand brand-row">
         <a href="./index.html" class="brand-link" aria-label="Casona Belga - Home">
-          <img src="../assets/logo_casona.png" alt="Casona Belga logo" class="logo" />
+          <img src="../assets/logo_casona.png" alt="Casona Belga logo" class="logo" width="60" height="60" />
           <div class="brand-text">
             <strong>Casona Belga</strong>
             <span>Hotel & Restaurant · Chile Chico</span>
@@ -63,7 +94,7 @@
         </a>
       </div>
 
-      <nav class="menu" aria-label="Navigation">
+      <nav id="navigation" class="menu" role="navigation" aria-label="Main Navigation">
         <a class="btn" href="menu.html">Restaurant</a>
         <a class="btn" href="rooms.html">Rooms</a>
         <a class="btn" href="contact.html">Contact</a>
@@ -78,7 +109,7 @@
     </div>
   </header>
 
-  <main class="container">
+  <main id="main-content" class="container" role="main">
     <section class="hero" data-animate>
       <div class="hero-grid">
         <div class="card">
@@ -225,7 +256,7 @@
 
         <div class="grid" data-animate-stagger>
           <div class="card card-flat">
-            <img src="../assets/LagoGC.jpeg" alt="Lake General Carrera with turquoise waters" class="card-image" loading="lazy" />
+            <img src="../assets/LagoGC.jpeg" alt="Lake General Carrera with turquoise waters" class="card-image" loading="lazy" width="400" height="300" />
             <h3>🚣 Lake General Carrera</h3>
             <p class="small">
               South America's second-largest lake. Explore the Marble Cathedrals and turquoise waters.
@@ -233,7 +264,7 @@
           </div>
 
           <div class="card card-flat">
-            <img src="../assets/Cerezas.avif" alt="Fresh cherries from Chile Chico" class="card-image" loading="lazy" />
+            <img src="../assets/Cerezas.avif" alt="Fresh cherries from Chile Chico" class="card-image" loading="lazy" width="400" height="300" />
             <h3>🍒 Organic Cherries</h3>
             <p class="small">
               Chile Chico is famous for its cherries. Visit the orchards during season (Dec-Jan).
@@ -241,7 +272,7 @@
           </div>
 
           <div class="card card-flat">
-            <img src="../assets/PNP.jpeg" alt="Trekking and Patagonia National Park" class="card-image" loading="lazy" />
+            <img src="../assets/PNP.jpeg" alt="Trekking and Patagonia National Park" class="card-image" loading="lazy" width="400" height="300" />
             <h3>🥾 Trekking & Visit to Patagonia National Park</h3>
             <p class="small">
               Explore spectacular trails and discover the unique biodiversity of Patagonia National Park.
@@ -309,7 +340,7 @@
   </main>
 
   <!-- ENHANCED FOOTER -->
-  <footer class="footer">
+  <footer class="footer" role="contentinfo">
     <div class="container">
       <div class="footer-grid">
         <div class="footer-section">
@@ -354,5 +385,11 @@
   <script>
     document.getElementById("y").textContent = new Date().getFullYear();
   </script>
+
+  <!-- Theme Toggle (load early to prevent flash) -->
+  <script src="../theme-toggle.js"></script>
+
+  <!-- Analytics -->
+  <script src="../analytics.js" defer></script>
 </body>
 </html>

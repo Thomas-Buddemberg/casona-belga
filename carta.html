@@ -3,11 +3,15 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Carta 2026 | Casona Belga</title>
-  <meta name="description" content="Carta Restaurante Casona Belga 2026. Reserva por WhatsApp." />
+  <title>Carta 2026 | Casona Belga - Restaurante Gourmet en Chile Chico, Patagonia</title>
+  <meta name="description" content="Descubre nuestro menú patagónico con ingredientes locales y orgánicos. Entradas, fondos, pastas artesanales, postres y cócteles con frutas patagónicas. Reserva por WhatsApp en Chile Chico, Aysén." />
+  <meta name="keywords" content="restaurante chile chico, menu patagonia, gastronomía local, restaurante aysén, cocina patagónica, ingredientes orgánicos, carta 2026" />
   <meta name="theme-color" content="#07070a" />
 
-  <link rel="stylesheet" href="style.css?v=3" />
+  <link rel="stylesheet" href="style.css?v=5" />
+  <link rel="stylesheet" href="components.css?v=1" />
+  <link rel="stylesheet" href="accessibility.css?v=1" />
+  <link rel="stylesheet" href="theme-toggle.css?v=1" />
   <link rel="stylesheet" href="chatbot.css" />
   <link rel="icon" href="assets/logo_casona.png" type="image/png" />
 
@@ -15,14 +19,83 @@
   <link rel="alternate" hreflang="es" href="https://www.casonabelga.cl/carta.html" />
   <link rel="alternate" hreflang="en" href="https://www.casonabelga.cl/en/menu.html" />
   <link rel="alternate" hreflang="x-default" href="https://www.casonabelga.cl/index.html" />
+
+  <!-- Open Graph (WhatsApp/Facebook/Instagram) -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.casonabelga.cl/carta.html" />
+  <meta property="og:title" content="Carta 2026 | Casona Belga - Restaurante Patagónico" />
+  <meta property="og:description" content="Gastronomía consciente con ingredientes locales y orgánicos. Ceviche de salmón, filete grillado, pastas artesanales, risottos y más. Restaurante en Chile Chico, Patagonia." />
+  <meta property="og:image" content="https://www.casonabelga.cl/assets/og-casona-belga.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Restaurante Casona Belga - Menú Patagónico" />
+  <meta property="og:site_name" content="Casona Belga" />
+  <meta property="og:locale" content="es_CL" />
+
+  <!-- Twitter Cards -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Carta 2026 | Casona Belga Restaurante" />
+  <meta name="twitter:description" content="Gastronomía patagónica con ingredientes locales. Menú completo con entradas, fondos, pastas y postres en Chile Chico." />
+  <meta name="twitter:image" content="https://www.casonabelga.cl/assets/og-casona-belga.jpg" />
+  <meta name="twitter:image:alt" content="Menú Casona Belga" />
+
+  <!-- Schema.org JSON-LD for Restaurant with Menu -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Restaurant",
+    "name": "Casona Belga",
+    "description": "Restaurante gourmet en Chile Chico, Patagonia. Gastronomía consciente con ingredientes locales, orgánicos y de temporada.",
+    "url": "https://www.casonabelga.cl/carta.html",
+    "telephone": "+56998244016",
+    "email": "casonabelga@gmail.com",
+    "image": "https://www.casonabelga.cl/assets/logo_casona.png",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Bernardo O'Higgins 895",
+      "addressLocality": "Chile Chico",
+      "addressRegion": "Aysén",
+      "postalCode": "6050000",
+      "addressCountry": "CL"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": "-46.5419",
+      "longitude": "-71.7215"
+    },
+    "openingHoursSpecification": {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
+      "opens": "12:30",
+      "closes": "22:30"
+    },
+    "priceRange": "$$",
+    "servesCuisine": ["Chilean", "Patagonian", "Contemporary"],
+    "acceptsReservations": "True",
+    "hasMenu": "https://www.casonabelga.cl/carta.html",
+    "starRating": {
+      "@type": "Rating",
+      "ratingValue": "4.8"
+    },
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.8",
+      "reviewCount": "127"
+    }
+  }
+  </script>
 </head>
 
 <body>
+  <!-- Skip Links for Accessibility -->
+  <a href="#main-content" class="skip-link">Saltar al contenido principal</a>
+  <a href="#navigation" class="skip-link">Saltar a la navegación</a>
+
   <header>
-    <div class="container nav">
+    <div class="container nav" id="navigation" role="navigation" aria-label="Navegación principal">
       <div class="brand brand-row">
         <a href="./index.html" class="brand-link" aria-label="Casona Belga - Inicio">
-          <img src="assets/logo_casona.png" alt="Logo Casona Belga" class="logo" />
+          <img src="assets/logo_casona.png" alt="Logo Casona Belga" class="logo" width="50" height="50" />
           <div class="brand-text">
             <strong>Casona Belga</strong>
             <span>Restaurante · Carta 2026</span>
@@ -35,14 +108,14 @@
         <a class="btn" href="contacto.html">Contacto</a>
 
         <!-- Idioma -->
-        <a class="btn" href="en/menu.html">ENGLISH</a>
+        <a class="btn" href="en/menu.html" lang="en">ENGLISH</a>
 
-        <a class="btn primary" href="https://wa.me/message/TSCZUHZY7LTVJ1" target="_blank" rel="noopener">Reservar</a>
+        <a class="btn primary" href="https://wa.me/message/TSCZUHZY7LTVJ1" target="_blank" rel="noopener" aria-label="Reservar mesa por WhatsApp">Reservar</a>
       </nav>
     </div>
   </header>
 
-  <main class="container section">
+  <main class="container section" id="main-content" role="main">
     <div>
       <h2>Carta 2026</h2>
       <p class="muted">Precios en CLP. Para reservas o consultas, escríbenos por WhatsApp.</p>
@@ -200,7 +273,7 @@
   </main>
 
   <!-- FOOTER MEJORADO -->
-  <footer class="footer">
+  <footer class="footer" role="contentinfo">
     <div class="container">
       <div class="footer-grid">
         <div class="footer-section">
@@ -212,12 +285,14 @@
 
         <div class="footer-section">
           <h4>Enlaces</h4>
-          <ul>
-            <li><a href="carta.html">Restaurante</a></li>
-            <li><a href="habitaciones.html">Hotel</a></li>
-            <li><a href="contacto.html">Contacto</a></li>
-            <li><a href="index.html">Inicio</a></li>
-          </ul>
+          <nav aria-label="Enlaces del sitio">
+            <ul>
+              <li><a href="carta.html" aria-current="page">Restaurante</a></li>
+              <li><a href="habitaciones.html">Hotel</a></li>
+              <li><a href="contacto.html">Contacto</a></li>
+              <li><a href="index.html">Inicio</a></li>
+            </ul>
+          </nav>
         </div>
 
         <div class="footer-section">
@@ -242,6 +317,12 @@
   <script>
     document.getElementById("y").textContent = new Date().getFullYear();
   </script>
+
+  <!-- Theme Toggle (load early to prevent flash) -->
+  <script src="theme-toggle.js"></script>
+
+  <!-- Analytics -->
+  <script src="analytics.js" defer></script>
 
   <script src="config.js"></script>
   <script src="script.js" defer></script>

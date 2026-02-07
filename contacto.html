@@ -3,12 +3,15 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Contacto | Casona Belga</title>
-  <meta name="description" content="Contacto, ubicación, horarios y WhatsApp directo." />
+  <title>Contacto | Casona Belga - Hotel & Restaurante en Chile Chico, Patagonia</title>
+  <meta name="description" content="Contáctanos en Casona Belga. WhatsApp +56 9 9824 4016, email casonabelga@gmail.com. Ubicación: Bernardo O'Higgins 895, Chile Chico. Horarios restaurante y hotel. Formulario de contacto." />
+  <meta name="keywords" content="contacto casona belga, teléfono chile chico, whatsapp hotel patagonia, ubicación chile chico, horarios restaurante aysén" />
   <meta name="theme-color" content="#07070a" />
 
   <link rel="stylesheet" href="style.css?v=5" />
   <link rel="stylesheet" href="components.css?v=1" />
+  <link rel="stylesheet" href="accessibility.css?v=1" />
+  <link rel="stylesheet" href="theme-toggle.css?v=1" />
   <link rel="stylesheet" href="chatbot.css" />
   <link rel="icon" href="assets/logo_casona.png" type="image/png" />
 
@@ -16,14 +19,74 @@
   <link rel="alternate" hreflang="es" href="https://www.casonabelga.cl/contacto.html" />
   <link rel="alternate" hreflang="en" href="https://www.casonabelga.cl/en/contact.html" />
   <link rel="alternate" hreflang="x-default" href="https://www.casonabelga.cl/index.html" />
+
+  <!-- Open Graph (WhatsApp/Facebook/Instagram) -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.casonabelga.cl/contacto.html" />
+  <meta property="og:title" content="Contacto | Casona Belga - Chile Chico, Patagonia" />
+  <meta property="og:description" content="Contáctanos por WhatsApp, teléfono o email. Ubicación en Bernardo O'Higgins 895, Chile Chico, Aysén. Horarios: Lun-Dom 12:30-22:30." />
+  <meta property="og:image" content="https://www.casonabelga.cl/assets/og-casona-belga.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Contacto Casona Belga - Chile Chico" />
+  <meta property="og:site_name" content="Casona Belga" />
+  <meta property="og:locale" content="es_CL" />
+
+  <!-- Twitter Cards -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Contacto | Casona Belga" />
+  <meta name="twitter:description" content="WhatsApp +56 9 9824 4016 | Bernardo O'Higgins 895, Chile Chico, Aysén. Horarios Lun-Dom 12:30-22:30." />
+  <meta name="twitter:image" content="https://www.casonabelga.cl/assets/og-casona-belga.jpg" />
+  <meta name="twitter:image:alt" content="Contacto Casona Belga" />
+
+  <!-- Schema.org JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": ["Hotel", "Restaurant"],
+    "name": "Casona Belga",
+    "description": "Hotel boutique y restaurante gourmet en Chile Chico, Patagonia Chilena.",
+    "url": "https://www.casonabelga.cl/contacto.html",
+    "telephone": "+56998244016",
+    "email": "casonabelga@gmail.com",
+    "image": "https://www.casonabelga.cl/assets/logo_casona.png",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Bernardo O'Higgins 895",
+      "addressLocality": "Chile Chico",
+      "addressRegion": "Aysén",
+      "postalCode": "6050000",
+      "addressCountry": "CL"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": "-46.5419",
+      "longitude": "-71.7215"
+    },
+    "openingHoursSpecification": {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
+      "opens": "12:30",
+      "closes": "22:30"
+    },
+    "sameAs": [
+      "https://www.instagram.com/casonabelga",
+      "https://www.facebook.com/casonabelga.belga/"
+    ]
+  }
+  </script>
 </head>
 
 <body>
+  <!-- Skip Links for Accessibility -->
+  <a href="#main-content" class="skip-link">Saltar al contenido principal</a>
+  <a href="#navigation" class="skip-link">Saltar a la navegación</a>
+
   <header>
-    <div class="container nav">
+    <div class="container nav" id="navigation" role="navigation" aria-label="Navegación principal">
       <div class="brand brand-row">
         <a href="./index.html" class="brand-link" aria-label="Casona Belga - Inicio">
-          <img src="assets/logo_casona.png" alt="Logo Casona Belga" class="logo" />
+          <img src="assets/logo_casona.png" alt="Logo Casona Belga" class="logo" width="50" height="50" />
           <div class="brand-text">
             <strong>Casona Belga</strong>
             <span>Contacto</span>
@@ -36,14 +99,14 @@
         <a class="btn" href="habitaciones.html">Hotel</a>
 
         <!-- Idioma -->
-        <a class="btn" href="en/contact.html">ENGLISH</a>
+        <a class="btn" href="en/contact.html" lang="en">ENGLISH</a>
 
-        <a class="btn primary" href="https://wa.me/message/TSCZUHZY7LTVJ1" target="_blank" rel="noopener">WhatsApp</a>
+        <a class="btn primary" href="https://wa.me/message/TSCZUHZY7LTVJ1" target="_blank" rel="noopener" aria-label="Contactar por WhatsApp">WhatsApp</a>
       </nav>
     </div>
   </header>
 
-  <main class="container section">
+  <main class="container section" id="main-content" role="main">
     <div data-animate>
       <h2>Contacto</h2>
     </div>
@@ -198,7 +261,7 @@
   </main>
 
   <!-- FOOTER MEJORADO -->
-  <footer class="footer">
+  <footer class="footer" role="contentinfo">
     <div class="container">
       <div class="footer-grid">
         <div class="footer-section">
@@ -210,12 +273,14 @@
 
         <div class="footer-section">
           <h4>Enlaces</h4>
-          <ul>
-            <li><a href="carta.html">Restaurante</a></li>
-            <li><a href="habitaciones.html">Hotel</a></li>
-            <li><a href="contacto.html">Contacto</a></li>
-            <li><a href="index.html">Inicio</a></li>
-          </ul>
+          <nav aria-label="Enlaces del sitio">
+            <ul>
+              <li><a href="carta.html">Restaurante</a></li>
+              <li><a href="habitaciones.html">Hotel</a></li>
+              <li><a href="contacto.html" aria-current="page">Contacto</a></li>
+              <li><a href="index.html">Inicio</a></li>
+            </ul>
+          </nav>
         </div>
 
         <div class="footer-section">
@@ -240,6 +305,12 @@
   <script>
     document.getElementById("y").textContent = new Date().getFullYear();
   </script>
+
+  <!-- Theme Toggle (load early to prevent flash) -->
+  <script src="theme-toggle.js"></script>
+
+  <!-- Analytics -->
+  <script src="analytics.js" defer></script>
 
   <script src="config.js"></script>
   <script src="script.js" defer></script>

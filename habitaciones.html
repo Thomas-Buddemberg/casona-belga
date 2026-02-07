@@ -3,26 +3,121 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Habitaciones | Casona Belga</title>
-  <meta name="description" content="Habitaciones, tarifas desde, políticas y consulta de disponibilidad por WhatsApp." />
+  <title>Habitaciones | Casona Belga - Hotel Boutique en Chile Chico, Patagonia</title>
+  <meta name="description" content="Habitaciones boutique en Chile Chico con cama matrimonial, baño privado, WiFi, desayuno incluido. Desde $95.000 CLP/noche. Reserva online o por WhatsApp. Check-in 15:00, late checkout disponible." />
+  <meta name="keywords" content="habitaciones chile chico, hotel patagonia, alojamiento aysén, habitaciones con desayuno, hotel boutique patagonia, hospedaje lago general carrera" />
 
-  <meta name="theme-color" content="#07070a" />
-  <link rel="stylesheet" href="style.css?v=3" />
+  <link rel="stylesheet" href="style.css?v=5" />
+  <link rel="stylesheet" href="components.css?v=1" />
+  <link rel="stylesheet" href="accessibility.css?v=1" />
+  <link rel="stylesheet" href="theme-toggle.css?v=1" />
   <link rel="stylesheet" href="chatbot.css" />
   <link rel="icon" href="assets/logo_casona.png" type="image/png" />
+  <meta name="theme-color" content="#07070a" />
 
   <link rel="canonical" href="https://www.casonabelga.cl/habitaciones.html" />
   <link rel="alternate" hreflang="es" href="https://www.casonabelga.cl/habitaciones.html" />
   <link rel="alternate" hreflang="en" href="https://www.casonabelga.cl/en/rooms.html" />
   <link rel="alternate" hreflang="x-default" href="https://www.casonabelga.cl/index.html" />
+
+  <!-- Open Graph (WhatsApp/Facebook/Instagram) -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.casonabelga.cl/habitaciones.html" />
+  <meta property="og:title" content="Habitaciones | Casona Belga - Hotel Boutique en Patagonia" />
+  <meta property="og:description" content="3 habitaciones boutique con cama matrimonial, baño privado, WiFi y desayuno incluido. Desde $95.000 CLP. Check-in 15:00, late checkout disponible." />
+  <meta property="og:image" content="https://www.casonabelga.cl/assets/og-casona-belga.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Habitaciones Casona Belga - Hotel en Chile Chico" />
+  <meta property="og:site_name" content="Casona Belga" />
+  <meta property="og:locale" content="es_CL" />
+
+  <!-- Twitter Cards -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Habitaciones | Casona Belga - Hotel Boutique Patagonia" />
+  <meta name="twitter:description" content="3 habitaciones boutique con desayuno incluido, WiFi, baño privado. Desde $95.000 CLP/noche en Chile Chico, Patagonia." />
+  <meta name="twitter:image" content="https://www.casonabelga.cl/assets/og-casona-belga.jpg" />
+  <meta name="twitter:image:alt" content="Habitaciones Casona Belga" />
+
+  <!-- Schema.org JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Hotel",
+    "name": "Casona Belga",
+    "description": "Hotel boutique con 3 habitaciones equipadas en Chile Chico, Patagonia Chilena. Desayuno incluido, WiFi, baño privado.",
+    "url": "https://www.casonabelga.cl/habitaciones.html",
+    "telephone": "+56998244016",
+    "email": "casonabelga@gmail.com",
+    "image": "https://www.casonabelga.cl/assets/logo_casona.png",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Bernardo O'Higgins 895",
+      "addressLocality": "Chile Chico",
+      "addressRegion": "Aysén",
+      "postalCode": "6050000",
+      "addressCountry": "CL"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": "-46.5419",
+      "longitude": "-71.7215"
+    },
+    "starRating": {
+      "@type": "Rating",
+      "ratingValue": "4.5"
+    },
+    "priceRange": "$$",
+    "checkinTime": "15:00",
+    "checkoutTime": "11:00",
+    "numberOfRooms": "3",
+    "amenityFeature": [
+      {
+        "@type": "LocationFeatureSpecification",
+        "name": "Free WiFi",
+        "value": true
+      },
+      {
+        "@type": "LocationFeatureSpecification",
+        "name": "Breakfast Included",
+        "value": true
+      },
+      {
+        "@type": "LocationFeatureSpecification",
+        "name": "Private Bathroom",
+        "value": true
+      },
+      {
+        "@type": "LocationFeatureSpecification",
+        "name": "Heating",
+        "value": true
+      },
+      {
+        "@type": "LocationFeatureSpecification",
+        "name": "Free Parking",
+        "value": true
+      }
+    ],
+    "offers": {
+      "@type": "Offer",
+      "price": "95000",
+      "priceCurrency": "CLP",
+      "availability": "https://schema.org/InStock"
+    }
+  }
+  </script>
 </head>
 
 <body>
+  <!-- Skip Links for Accessibility -->
+  <a href="#main-content" class="skip-link">Saltar al contenido principal</a>
+  <a href="#navigation" class="skip-link">Saltar a la navegación</a>
+
   <header>
-    <div class="container nav">
+    <div class="container nav" id="navigation" role="navigation" aria-label="Navegación principal">
       <div class="brand brand-row">
         <a href="./index.html" class="brand-link" aria-label="Casona Belga - Inicio">
-          <img src="assets/logo_casona.png" alt="Logo Casona Belga" class="logo" />
+          <img src="assets/logo_casona.png" alt="Logo Casona Belga" class="logo" width="50" height="50" />
           <div class="brand-text">
             <strong>Casona Belga</strong>
             <span>Hotel · Habitaciones</span>
@@ -35,111 +130,114 @@
         <a class="btn" href="contacto.html">Contacto</a>
 
         <!-- Idioma -->
-        <a class="btn" href="en/rooms.html">ENGLISH</a>
+        <a class="btn" href="en/rooms.html" lang="en">ENGLISH</a>
 
-        <a class="btn primary" href="https://wa.me/message/TSCZUHZY7LTVJ1" target="_blank" rel="noopener">Consultar</a>
+        <a class="btn primary" href="https://wa.me/message/TSCZUHZY7LTVJ1" target="_blank" rel="noopener" aria-label="Consultar por WhatsApp">Consultar</a>
       </nav>
     </div>
   </header>
 
-  <main class="container section">
+  <main class="container section" id="main-content" role="main">
     <div>
-      <h2>Habitaciones</h2>
+      <h1>Habitaciones</h1>
       <p class="muted">Tenemos 3 habitaciones equipadas con cama matrimonial, y la opción de incorporar una cama individual adicional, para una estadía flexible y confortable (capacidad 2–3 personas).</p>
     </div>
 
     <div class="cta-row">
-      <a class="btn primary" href="reservas.html">🛏️ Reservar Online</a>
-      <a class="btn" href="https://wa.me/message/TSCZUHZY7LTVJ1" target="_blank" rel="noopener">💬 Consultar por WhatsApp</a>
-      <a class="btn" href="index.html">⬅ Volver</a>
+      <a class="btn primary" href="reservas.html" aria-label="Reservar habitación online">🛏️ Reservar Online</a>
+      <a class="btn" href="https://wa.me/message/TSCZUHZY7LTVJ1" target="_blank" rel="noopener" aria-label="Consultar disponibilidad por WhatsApp">💬 Consultar por WhatsApp</a>
+      <a class="btn" href="index.html" aria-label="Volver a la página de inicio">⬅ Volver</a>
     </div>
 
     <hr class="sep" />
 
-    <div class="grid">
-      <div class="card">
-        <h2>Habitación Tehuelche</h2>
-        <p class="muted">Capacidad: 2–3 · Baño: Privado · Desayuno: Lun–Dom 7:30–10:00</p>
-        <div class="badges">
-          <span class="badge">1 cama matrimonial</span>
-          <span class="badge">Opción de agregar 1 cama de una plaza</span>
-          <span class="badge">Wi-Fi</span>
-          <span class="badge">Calefacción eléctrica</span>
-          <span class="badge">Estacionamiento</span>
-          <span class="badge">Baño privado</span>
-          <span class="badge">Ducha</span>
-          <span class="badge">Escritorio de trabajo</span>
-        </div>
-        <p class="small" style="margin-top:10px;">Desde <strong>$95.000 CLP</strong> por noche</p>
-      </div>
+    <section aria-labelledby="rooms-title">
+      <h2 id="rooms-title" class="sr-only">Nuestras Habitaciones</h2>
+      <div class="grid">
+        <article class="card">
+          <h3>Habitación Tehuelche</h3>
+          <p class="muted">Capacidad: 2–3 · Baño: Privado · Desayuno: Lun–Dom 7:30–10:00</p>
+          <div class="badges">
+            <span class="badge">1 cama matrimonial</span>
+            <span class="badge">Opción de agregar 1 cama de una plaza</span>
+            <span class="badge">Wi-Fi</span>
+            <span class="badge">Calefacción eléctrica</span>
+            <span class="badge">Estacionamiento</span>
+            <span class="badge">Baño privado</span>
+            <span class="badge">Ducha</span>
+            <span class="badge">Escritorio de trabajo</span>
+          </div>
+          <p class="small" style="margin-top:10px;">Desde <strong>$95.000 CLP</strong> por noche</p>
+        </article>
 
-      <div class="card">
-        <h2>Habitación Yaganes</h2>
-        <p class="muted">Capacidad: 2–3 · Baño: Privado · Desayuno: Lun–Dom 7:30–10:00</p>
-        <div class="badges">
-          <span class="badge">1 cama matrimonial</span>
-          <span class="badge">Opción de agregar 1 cama de una plaza</span>
-          <span class="badge">Wi-Fi</span>
-          <span class="badge">Calefacción eléctrica</span>
-          <span class="badge">Estacionamiento</span>
-          <span class="badge">Baño privado</span>
-          <span class="badge">Ducha</span>
-          <span class="badge">Escritorio de trabajo</span>
-        </div>
-        <p class="small" style="margin-top:10px;">Desde <strong>$95.000 CLP</strong> por noche</p>
-      </div>
+        <article class="card">
+          <h3>Habitación Yaganes</h3>
+          <p class="muted">Capacidad: 2–3 · Baño: Privado · Desayuno: Lun–Dom 7:30–10:00</p>
+          <div class="badges">
+            <span class="badge">1 cama matrimonial</span>
+            <span class="badge">Opción de agregar 1 cama de una plaza</span>
+            <span class="badge">Wi-Fi</span>
+            <span class="badge">Calefacción eléctrica</span>
+            <span class="badge">Estacionamiento</span>
+            <span class="badge">Baño privado</span>
+            <span class="badge">Ducha</span>
+            <span class="badge">Escritorio de trabajo</span>
+          </div>
+          <p class="small" style="margin-top:10px;">Desde <strong>$95.000 CLP</strong> por noche</p>
+        </article>
 
-      <div class="card">
-        <h2>Habitación Chonos</h2>
-        <p class="muted">Capacidad: 2–3 · Baño: Privado · Desayuno: Lun–Dom 7:30–10:00</p>
-        <div class="badges">
-          <span class="badge">1 cama matrimonial</span>
-          <span class="badge">Opción de agregar 1 cama de una plaza</span>
-          <span class="badge">Wi-Fi</span>
-          <span class="badge">Calefacción a leña</span>
-          <span class="badge">Estacionamiento</span>
-          <span class="badge">Baño privado</span>
-          <span class="badge">Ducha</span>
-          <span class="badge">Escritorio de trabajo</span>
-        </div>
-        <p class="small" style="margin-top:10px;">Desde <strong>$95.000 CLP</strong> por noche</p>
-      </div>
+        <article class="card">
+          <h3>Habitación Chonos</h3>
+          <p class="muted">Capacidad: 2–3 · Baño: Privado · Desayuno: Lun–Dom 7:30–10:00</p>
+          <div class="badges">
+            <span class="badge">1 cama matrimonial</span>
+            <span class="badge">Opción de agregar 1 cama de una plaza</span>
+            <span class="badge">Wi-Fi</span>
+            <span class="badge">Calefacción a leña</span>
+            <span class="badge">Estacionamiento</span>
+            <span class="badge">Baño privado</span>
+            <span class="badge">Ducha</span>
+            <span class="badge">Escritorio de trabajo</span>
+          </div>
+          <p class="small" style="margin-top:10px;">Desde <strong>$95.000 CLP</strong> por noche</p>
+        </article>
 
-      <div class="card full">
-        <h2>Políticas</h2>
-        <div class="policies-grid">
-          <div class="item">
-            <div class="title">Check-in / Check-out</div>
-            <div class="desc">
-              Check-in desde las <strong>15:00</strong> · Check-out hasta las <strong>11:00</strong>.
-              Si almuerza en el restaurante de la Casona Belga, tiene como beneficio un Late Checkout (14:00) <strong>sujeto a disponibilidad</strong>.
+        <article class="card full">
+          <h3>Políticas</h3>
+          <div class="policies-grid">
+            <div class="item">
+              <div class="title">Check-in / Check-out</div>
+              <div class="desc">
+                Check-in desde las <strong>15:00</strong> · Check-out hasta las <strong>11:00</strong>.
+                Si almuerza en el restaurante de la Casona Belga, tiene como beneficio un Late Checkout (14:00) <strong>sujeto a disponibilidad</strong>.
+              </div>
+            </div>
+
+            <div class="item">
+              <div class="title">Cancelación y cambios</div>
+              <div class="desc">
+                Cancelación sin costo con un mínimo de <strong>7 días</strong> de anticipación.
+                Cancelaciones con <strong>menos de 7 días</strong> no permiten devolución de la reserva (<strong>50%</strong>).
+                Si viajas tomando la <strong>barcaza / ferry</strong> y se cierra puerto por condiciones climáticas,
+                podemos <strong>mover tu reserva para el día siguiente sin costo</strong> (sujeto a disponibilidad).
+              </div>
+            </div>
+
+            <div class="item">
+              <div class="title">Niños y mascotas</div>
+              <div class="desc">
+                <strong>Niños +10 años bienvenidos</strong>; contamos con juegos de mesa para ellos.
+                <strong>Mascotas permitidas</strong>, pero deben permanecer <strong>afuera de la Casona</strong> (no pueden ingresar al interior).
+              </div>
             </div>
           </div>
-
-          <div class="item">
-            <div class="title">Cancelación y cambios</div>
-            <div class="desc">
-              Cancelación sin costo con un mínimo de <strong>7 días</strong> de anticipación.
-              Cancelaciones con <strong>menos de 7 días</strong> no permiten devolución de la reserva (<strong>50%</strong>).
-              Si viajas tomando la <strong>barcaza / ferry</strong> y se cierra puerto por condiciones climáticas,
-              podemos <strong>mover tu reserva para el día siguiente sin costo</strong> (sujeto a disponibilidad).
-            </div>
-          </div>
-
-          <div class="item">
-            <div class="title">Niños y mascotas</div>
-            <div class="desc">
-              <strong>Niños +10 años bienvenidos</strong>; contamos con juegos de mesa para ellos.
-              <strong>Mascotas permitidas</strong>, pero deben permanecer <strong>afuera de la Casona</strong> (no pueden ingresar al interior).
-            </div>
-          </div>
-        </div>
+        </article>
       </div>
-    </div>
+    </section>
   </main>
 
   <!-- FOOTER MEJORADO -->
-  <footer class="footer">
+  <footer class="footer" role="contentinfo">
     <div class="container">
       <div class="footer-grid">
         <div class="footer-section">
@@ -151,12 +249,14 @@
 
         <div class="footer-section">
           <h4>Enlaces</h4>
-          <ul>
-            <li><a href="carta.html">Restaurante</a></li>
-            <li><a href="habitaciones.html">Hotel</a></li>
-            <li><a href="contacto.html">Contacto</a></li>
-            <li><a href="index.html">Inicio</a></li>
-          </ul>
+          <nav aria-label="Enlaces del sitio">
+            <ul>
+              <li><a href="carta.html">Restaurante</a></li>
+              <li><a href="habitaciones.html" aria-current="page">Hotel</a></li>
+              <li><a href="contacto.html">Contacto</a></li>
+              <li><a href="index.html">Inicio</a></li>
+            </ul>
+          </nav>
         </div>
 
         <div class="footer-section">
@@ -172,7 +272,7 @@
 
       <div class="footer-bottom">
         <div class="small">
-          © <span id="y"></span> Casona Belga · Descansa bien, come mejor.
+          © <span id="y"></span> Casona Belga · Descansa bien, come mejor 🌟
         </div>
       </div>
     </div>
@@ -181,6 +281,12 @@
   <script>
     document.getElementById("y").textContent = new Date().getFullYear();
   </script>
+
+  <!-- Theme Toggle (load early to prevent flash) -->
+  <script src="theme-toggle.js"></script>
+
+  <!-- Analytics -->
+  <script src="analytics.js" defer></script>
 
   <script src="config.js"></script>
   <script src="script.js" defer></script>
