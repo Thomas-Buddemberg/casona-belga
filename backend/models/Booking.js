@@ -63,14 +63,17 @@ class Booking {
       errors.push('Check-in and check-out dates are required');
     }
 
-    const checkIn = new Date(this.checkIn);
-    const checkOut = new Date(this.checkOut);
-    const today = new Date();
-    today.setHours(0, 0, 0, 0);
+    // Compare dates as strings to avoid timezone issues
+    const todayStr = new Date().toISOString().split('T')[0];
+    const checkInStr = this.checkIn.split('T')[0]; // Handle both ISO datetime and date-only strings
 
-    if (checkIn < today) {
+    // Allow same-day bookings - only reject dates strictly in the past
+    if (checkInStr < todayStr) {
       errors.push('Check-in date cannot be in the past');
     }
+
+    const checkIn = new Date(this.checkIn);
+    const checkOut = new Date(this.checkOut);
 
     if (checkOut <= checkIn) {
       errors.push('Check-out must be after check-in');

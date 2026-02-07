@@ -373,6 +373,21 @@
       opacity: 0.3;
     }
 
+    .btn-cancel {
+      background: #95a5a6;
+      color: white;
+      border: none;
+      padding: 12px 30px;
+      border-radius: 6px;
+      cursor: pointer;
+      font-weight: 600;
+      transition: background 0.3s ease;
+    }
+
+    .btn-cancel:hover {
+      background: #7f8c8d;
+    }
+
     @media (max-width: 768px) {
       .stats {
         grid-template-columns: 1fr;
@@ -530,14 +545,14 @@
         <h2>Nueva Reserva Manual</h2>
         <button class="modal-close" onclick="closeNewBookingModal()">&times;</button>
       </div>
-      <div style="margin-bottom: 15px; padding: 10px; background: #e3f2fd; border-radius: 5px; font-size: 14px;">
+      <div style="margin-bottom: 15px; padding: 10px; background: #e3f2fd; border-radius: 5px; font-size: 14px; color: #1565c0;">
         💡 <strong>Tip:</strong> Usa este formulario para agregar reservas de Booking.com u otras plataformas
       </div>
       <form id="new-booking-form">
         <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-bottom: 15px;">
           <div>
-            <label style="display: block; margin-bottom: 5px; font-weight: 600;">Habitación *</label>
-            <select id="new-room" required style="width: 100%; padding: 10px; border: 2px solid #dee2e6; border-radius: 6px;">
+            <label style="display: block; margin-bottom: 5px; font-weight: 600; color: #2c3e50;">Habitación *</label>
+            <select id="new-room" required style="width: 100%; padding: 10px; border: 2px solid #dee2e6; border-radius: 6px; color: #2c3e50;">
               <option value="">Selecciona...</option>
               <option value="tehuelche">Tehuelche</option>
               <option value="yaganes">Yaganes</option>
@@ -545,8 +560,8 @@
             </select>
           </div>
           <div>
-            <label style="display: block; margin-bottom: 5px; font-weight: 600;">Estado *</label>
-            <select id="new-status" required style="width: 100%; padding: 10px; border: 2px solid #dee2e6; border-radius: 6px;">
+            <label style="display: block; margin-bottom: 5px; font-weight: 600; color: #2c3e50;">Estado *</label>
+            <select id="new-status" required style="width: 100%; padding: 10px; border: 2px solid #dee2e6; border-radius: 6px; color: #2c3e50;">
               <option value="confirmed">Confirmada</option>
               <option value="pending">Pendiente</option>
             </select>
@@ -555,23 +570,23 @@
 
         <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-bottom: 15px;">
           <div>
-            <label style="display: block; margin-bottom: 5px; font-weight: 600;">Check-in *</label>
-            <input type="date" id="new-checkIn" required style="width: 100%; padding: 10px; border: 2px solid #dee2e6; border-radius: 6px;">
+            <label style="display: block; margin-bottom: 5px; font-weight: 600; color: #2c3e50;">Check-in *</label>
+            <input type="date" id="new-checkIn" required style="width: 100%; padding: 10px; border: 2px solid #dee2e6; border-radius: 6px; color: #2c3e50;">
           </div>
           <div>
-            <label style="display: block; margin-bottom: 5px; font-weight: 600;">Check-out *</label>
-            <input type="date" id="new-checkOut" required style="width: 100%; padding: 10px; border: 2px solid #dee2e6; border-radius: 6px;">
+            <label style="display: block; margin-bottom: 5px; font-weight: 600; color: #2c3e50;">Check-out *</label>
+            <input type="date" id="new-checkOut" required style="width: 100%; padding: 10px; border: 2px solid #dee2e6; border-radius: 6px; color: #2c3e50;">
           </div>
         </div>
 
         <div style="display: grid; grid-template-columns: 2fr 1fr; gap: 15px; margin-bottom: 15px;">
           <div>
-            <label style="display: block; margin-bottom: 5px; font-weight: 600;">Nombre del Huésped *</label>
-            <input type="text" id="new-guestName" required placeholder="Ej: Juan Pérez" style="width: 100%; padding: 10px; border: 2px solid #dee2e6; border-radius: 6px;">
+            <label style="display: block; margin-bottom: 5px; font-weight: 600; color: #2c3e50;">Nombre del Huésped *</label>
+            <input type="text" id="new-guestName" required placeholder="Ej: Juan Pérez" style="width: 100%; padding: 10px; border: 2px solid #dee2e6; border-radius: 6px; color: #2c3e50;">
           </div>
           <div>
-            <label style="display: block; margin-bottom: 5px; font-weight: 600;">Huéspedes *</label>
-            <select id="new-guests" required style="width: 100%; padding: 10px; border: 2px solid #dee2e6; border-radius: 6px;">
+            <label style="display: block; margin-bottom: 5px; font-weight: 600; color: #2c3e50;">Huéspedes *</label>
+            <select id="new-guests" required style="width: 100%; padding: 10px; border: 2px solid #dee2e6; border-radius: 6px; color: #2c3e50;">
               <option value="1">1</option>
               <option value="2" selected>2</option>
               <option value="3">3</option>
@@ -581,18 +596,18 @@
 
         <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-bottom: 15px;">
           <div>
-            <label style="display: block; margin-bottom: 5px; font-weight: 600;">Email *</label>
-            <input type="email" id="new-guestEmail" required placeholder="email@ejemplo.com" style="width: 100%; padding: 10px; border: 2px solid #dee2e6; border-radius: 6px;">
+            <label style="display: block; margin-bottom: 5px; font-weight: 600; color: #2c3e50;">Email *</label>
+            <input type="email" id="new-guestEmail" required placeholder="email@ejemplo.com" style="width: 100%; padding: 10px; border: 2px solid #dee2e6; border-radius: 6px; color: #2c3e50;">
           </div>
           <div>
-            <label style="display: block; margin-bottom: 5px; font-weight: 600;">Teléfono *</label>
-            <input type="tel" id="new-guestPhone" required placeholder="+56912345678" style="width: 100%; padding: 10px; border: 2px solid #dee2e6; border-radius: 6px;">
+            <label style="display: block; margin-bottom: 5px; font-weight: 600; color: #2c3e50;">Teléfono *</label>
+            <input type="tel" id="new-guestPhone" required placeholder="+56912345678" style="width: 100%; padding: 10px; border: 2px solid #dee2e6; border-radius: 6px; color: #2c3e50;">
           </div>
         </div>
 
         <div style="margin-bottom: 15px;">
-          <label style="display: block; margin-bottom: 5px; font-weight: 600;">Origen de la Reserva</label>
-          <select id="new-source" style="width: 100%; padding: 10px; border: 2px solid #dee2e6; border-radius: 6px;">
+          <label style="display: block; margin-bottom: 5px; font-weight: 600; color: #2c3e50;">Origen de la Reserva</label>
+          <select id="new-source" style="width: 100%; padding: 10px; border: 2px solid #dee2e6; border-radius: 6px; color: #2c3e50;">
             <option value="Booking.com">Booking.com</option>
             <option value="Airbnb">Airbnb</option>
             <option value="Teléfono">Teléfono</option>
@@ -604,8 +619,8 @@
         </div>
 
         <div style="margin-bottom: 20px;">
-          <label style="display: block; margin-bottom: 5px; font-weight: 600;">Comentarios</label>
-          <textarea id="new-comments" rows="3" placeholder="Notas adicionales..." style="width: 100%; padding: 10px; border: 2px solid #dee2e6; border-radius: 6px;"></textarea>
+          <label style="display: block; margin-bottom: 5px; font-weight: 600; color: #2c3e50;">Comentarios</label>
+          <textarea id="new-comments" rows="3" placeholder="Notas adicionales..." style="width: 100%; padding: 10px; border: 2px solid #dee2e6; border-radius: 6px; color: #2c3e50;"></textarea>
         </div>
 
         <div id="new-booking-error" style="display: none; margin-bottom: 15px;"></div>

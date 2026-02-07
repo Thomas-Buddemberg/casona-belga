@@ -15,7 +15,7 @@ class EmailService {
 
   setupTransporter() {
     // Using Gmail SMTP (you'll need to enable "App Passwords" in Google Account)
-    this.transporter = nodemailer.createTransporter({
+    this.transporter = nodemailer.createTransport({
       service: 'gmail',
       auth: {
         user: process.env.EMAIL_USER,
