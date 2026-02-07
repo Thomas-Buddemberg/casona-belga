@@ -1,0 +1,348 @@
+/**
+ * THEME TOGGLE STYLES
+ * Dark/Light Mode Toggle Button & Theme Variables
+ */
+
+/* ============================================
+   LIGHT MODE VARIABLES
+   ============================================ */
+
+[data-theme="light"] {
+  /* Base Colors */
+  --black-carbon: #fafaf9;
+  --beige-warm: #1c1917;
+  --beige-muted: #292524;
+  --copper-warm: #92400e;
+  --gold-soft: #a16207;
+
+  /* Background */
+  --bg-base: #fafaf9;
+  --bg-elevated: #ffffff;
+  --bg-overlay: rgba(255, 255, 255, 0.95);
+
+  /* Text */
+  --text-primary: #1c1917;
+  --text-secondary: #57534e;
+  --text-muted: #78716c;
+  --text-inverse: #fafaf9;
+
+  /* Borders */
+  --border-subtle: rgba(0, 0, 0, 0.08);
+  --border-medium: rgba(0, 0, 0, 0.15);
+  --border-strong: rgba(0, 0, 0, 0.25);
+
+  /* Shadows */
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.12);
+  --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 10px 20px rgba(0, 0, 0, 0.15);
+  --shadow-xl: 0 20px 40px rgba(0, 0, 0, 0.2);
+
+  /* Brand Colors (slightly adjusted for light mode) */
+  --copper-warm: #c2825b;
+  --gold-soft: #d4a574;
+  --sage-green: #7a9177;
+  --cream-light: #f5f1ea;
+
+  /* Status Colors */
+  --success-base: #16a34a;
+  --success-light: #dcfce7;
+  --success-dark: #166534;
+
+  --error-base: #dc2626;
+  --error-light: #fee2e2;
+  --error-dark: #991b1b;
+
+  --warning-base: #ea580c;
+  --warning-light: #ffedd5;
+  --warning-dark: #9a3412;
+
+  --info-base: #0284c7;
+  --info-light: #e0f2fe;
+  --info-dark: #075985;
+
+  /* Hero Overlay (lighter for light mode) */
+  --hero-overlay: linear-gradient(
+    135deg,
+    rgba(250, 250, 249, 0.75) 0%,
+    rgba(245, 241, 234, 0.85) 100%
+  );
+
+  /* Testimonial Background */
+  --testimonial-bg: rgba(255, 255, 255, 0.7);
+
+  /* Newsletter Background */
+  --newsletter-gradient: linear-gradient(
+    135deg,
+    rgba(194, 130, 91, 0.15) 0%,
+    rgba(212, 165, 116, 0.15) 100%
+  );
+}
+
+/* ============================================
+   THEME TOGGLE BUTTON
+   ============================================ */
+
+.theme-toggle {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  margin: 0 var(--space-xs);
+  background: var(--bg-elevated);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-full);
+  cursor: pointer;
+  transition: all var(--duration-fast) var(--ease-out);
+  color: var(--text-primary);
+  overflow: hidden;
+}
+
+.theme-toggle:hover {
+  background: var(--bg-base);
+  border-color: var(--border-medium);
+  transform: scale(1.05);
+}
+
+.theme-toggle:focus {
+  outline: 3px solid var(--copper-warm);
+  outline-offset: 2px;
+}
+
+.theme-toggle:active {
+  transform: scale(0.95);
+}
+
+/* Theme Icons */
+.theme-icon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 20px;
+  height: 20px;
+  opacity: 0;
+  transition: opacity var(--duration-base) var(--ease-out),
+              transform var(--duration-base) var(--ease-out);
+}
+
+/* Show sun icon in dark mode */
+.theme-toggle--dark .theme-icon--light {
+  opacity: 1;
+  transform: translate(-50%, -50%) rotate(0deg);
+}
+
+.theme-toggle--dark .theme-icon--dark {
+  opacity: 0;
+  transform: translate(-50%, -50%) rotate(180deg);
+}
+
+/* Show moon icon in light mode */
+.theme-toggle--light .theme-icon--light {
+  opacity: 0;
+  transform: translate(-50%, -50%) rotate(-180deg);
+}
+
+.theme-toggle--light .theme-icon--dark {
+  opacity: 1;
+  transform: translate(-50%, -50%) rotate(0deg);
+}
+
+/* Smooth theme transitions */
+:root {
+  --theme-transition-duration: 300ms;
+}
+
+html.theme-transitioning * {
+  transition: background-color var(--theme-transition-duration) var(--ease-out),
+              border-color var(--theme-transition-duration) var(--ease-out),
+              color var(--theme-transition-duration) var(--ease-out) !important;
+}
+
+/* Prevent transition on first load */
+html:not(.theme-loaded) * {
+  transition: none !important;
+}
+
+/* Mark as loaded after first paint */
+@keyframes theme-loaded {
+  to {
+    opacity: 1;
+  }
+}
+
+html {
+  animation: theme-loaded 1ms;
+  animation-fill-mode: forwards;
+}
+
+html.theme-loaded {
+  /* Theme transitions enabled */
+}
+
+/* ============================================
+   LIGHT MODE SPECIFIC ADJUSTMENTS
+   ============================================ */
+
+[data-theme="light"] .hero-overlay {
+  background: var(--hero-overlay);
+}
+
+[data-theme="light"] .card {
+  box-shadow: var(--shadow-md);
+}
+
+[data-theme="light"] .btn-hero.primary {
+  background: var(--copper-warm);
+  color: var(--text-inverse);
+  box-shadow: 0 4px 16px rgba(194, 130, 91, 0.3);
+}
+
+[data-theme="light"] .btn-hero.primary:hover {
+  background: #a76f4d;
+  box-shadow: 0 6px 20px rgba(194, 130, 91, 0.4);
+}
+
+[data-theme="light"] .btn-hero.secondary {
+  background: transparent;
+  color: var(--text-primary);
+  border: 2px solid var(--text-primary);
+}
+
+[data-theme="light"] .btn-hero.secondary:hover {
+  background: var(--text-primary);
+  color: var(--text-inverse);
+}
+
+[data-theme="light"] .testimonial-card {
+  background: var(--testimonial-bg);
+  backdrop-filter: blur(10px);
+  box-shadow: var(--shadow-md);
+}
+
+[data-theme="light"] .newsletter {
+  background: var(--newsletter-gradient);
+}
+
+[data-theme="light"] .footer {
+  background: linear-gradient(
+    180deg,
+    rgba(250, 250, 249, 0.95) 0%,
+    rgba(245, 241, 234, 1) 100%
+  );
+  border-top: 1px solid var(--border-subtle);
+}
+
+[data-theme="light"] code {
+  background: rgba(0, 0, 0, 0.05);
+  color: #c7254e;
+}
+
+[data-theme="light"] pre {
+  background: rgba(0, 0, 0, 0.03);
+  border: 1px solid var(--border-subtle);
+}
+
+/* Light mode scrollbar */
+[data-theme="light"]::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+[data-theme="light"]::-webkit-scrollbar-thumb {
+  background: #c0c0c0;
+}
+
+[data-theme="light"]::-webkit-scrollbar-thumb:hover {
+  background: #a0a0a0;
+}
+
+/* ============================================
+   RESPONSIVE ADJUSTMENTS
+   ============================================ */
+
+@media (max-width: 768px) {
+  .theme-toggle {
+    width: 40px;
+    height: 40px;
+    margin: 0 var(--space-xxs);
+  }
+
+  .theme-icon {
+    width: 18px;
+    height: 18px;
+  }
+}
+
+/* ============================================
+   REDUCED MOTION
+   ============================================ */
+
+@media (prefers-reduced-motion: reduce) {
+  .theme-toggle,
+  .theme-icon {
+    transition: none !important;
+  }
+
+  html.theme-transitioning * {
+    transition: none !important;
+  }
+}
+
+/* ============================================
+   PRINT STYLES
+   ============================================ */
+
+@media print {
+  .theme-toggle {
+    display: none !important;
+  }
+
+  /* Force light theme for printing */
+  :root {
+    --bg-base: #ffffff;
+    --text-primary: #000000;
+    --text-secondary: #333333;
+  }
+}
+
+/* ============================================
+   HIGH CONTRAST MODE
+   ============================================ */
+
+@media (prefers-contrast: high) {
+  .theme-toggle {
+    border-width: 2px;
+  }
+
+  [data-theme="light"] {
+    --text-primary: #000000;
+    --text-secondary: #333333;
+    --bg-base: #ffffff;
+    --border-medium: rgba(0, 0, 0, 0.5);
+  }
+}
+
+/* ============================================
+   THEME TOGGLE POSITIONING
+   ============================================ */
+
+/* Position toggle button in navigation */
+.nav .theme-toggle {
+  order: 10; /* Place at end of flex container */
+  margin-left: auto;
+}
+
+/* If nav is not flex, use float */
+.nav:not([style*="display: flex"]) .theme-toggle {
+  float: right;
+}
+
+@media (max-width: 768px) {
+  .nav .theme-toggle {
+    /* On mobile, keep it visible and accessible */
+    position: relative;
+    margin-right: var(--space-sm);
+  }
+}
