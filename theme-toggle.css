@@ -79,6 +79,28 @@
 }
 
 /* ============================================
+   DARK MODE VARIABLES (explicit for consistency)
+   ============================================ */
+
+[data-theme="dark"] {
+  /* Text - High contrast on dark background */
+  --text-primary: #fafafa;
+  --text-secondary: #e0e0e0;
+  --text-muted: #b0b0b0;
+  --text-inverse: #000000;
+
+  /* Background */
+  --bg-base: #0a0908;
+  --bg-elevated: #1a1715;
+  --bg-overlay: rgba(10, 9, 8, 0.95);
+
+  /* Borders */
+  --border-subtle: rgba(255, 255, 255, 0.08);
+  --border-medium: rgba(255, 255, 255, 0.15);
+  --border-strong: rgba(255, 255, 255, 0.25);
+}
+
+/* ============================================
    THEME TOGGLE BUTTON
    ============================================ */
 
