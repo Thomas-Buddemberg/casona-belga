@@ -255,12 +255,15 @@ class BookingCalendar {
   }
 
   setupEventListeners() {
-    // Room selector
-    document.querySelectorAll('.room-btn').forEach(btn => {
-      btn.addEventListener('click', (e) => {
-        this.changeRoom(e.target.dataset.room);
+    // Room selector - using event delegation to handle re-rendered buttons
+    const roomSelector = document.getElementById('room-selector');
+    if (roomSelector) {
+      roomSelector.addEventListener('click', (e) => {
+        if (e.target.classList.contains('room-btn')) {
+          this.changeRoom(e.target.dataset.room);
+        }
       });
-    });
+    }
 
     // Calendar navigation
     const prevBtn = document.getElementById('prev-month');
